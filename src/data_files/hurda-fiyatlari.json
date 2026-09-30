@@ -1,0 +1,82 @@
+{
+  "lastUpdated": "Bugün Güncellendi",
+  "currency": "₺ / Kg",
+  "disclaimer": "Belirtilen fiyatlar piyasa ve Londra Metal Borsası (LME) ortalamasıdır. Tonaj, temizlik ve saflık oranına göre daha yüksek fiyat teklifi verilir. Anlık net fiyat için WhatsApp'tan fotoğraf atınız.",
+  "categories": [
+    {
+      "name": "Bakır & Kablo Hurdası",
+      "icon": "copper",
+      "badge": "En Çok Aranan",
+      "items": [
+        { "name": "Soyma Bakır Hurdası (Saf / Parlak)", "unit": "Kg", "priceMin": "330", "priceMax": "365", "trend": "up" },
+        { "name": "Lama Bakır Hurdası (Trafo & Pano)", "unit": "Kg", "priceMin": "320", "priceMax": "350", "trend": "up" },
+        { "name": "Kırkambar Bakır Hurdası (Karışık/Yanık)", "unit": "Kg", "priceMin": "290", "priceMax": "325", "trend": "stable" },
+        { "name": "Külçe & Granür Bakır", "unit": "Kg", "priceMin": "315", "priceMax": "345", "trend": "up" },
+        { "name": "TTR ve Antigron Hurda Kablo", "unit": "Kg", "priceMin": "115", "priceMax": "155", "trend": "stable" },
+        { "name": "Yeraltı Zırhlı Enerji Kablosu", "unit": "Kg", "priceMin": "140", "priceMax": "190", "trend": "up" },
+        { "name": "Karışık İnce Kablo (Data / Tesisat)", "unit": "Kg", "priceMin": "85", "priceMax": "120", "trend": "stable" }
+      ]
+    },
+    {
+      "name": "Sarı (Pirinç) Hurdası",
+      "icon": "brass",
+      "badge": "Yüksek Talep",
+      "items": [
+        { "name": "Araiş Sarı Hurdası (MS-58 / MS-64)", "unit": "Kg", "priceMin": "220", "priceMax": "245", "trend": "up" },
+        { "name": "Sarı Çubuk Talaşı (Temiz / Kuru)", "unit": "Kg", "priceMin": "195", "priceMax": "220", "trend": "stable" },
+        { "name": "Musluk, Vana ve Su Saati Hurdası", "unit": "Kg", "priceMin": "205", "priceMax": "230", "trend": "up" },
+        { "name": "Kırkambar Sarı (Radyatör & Karışık)", "unit": "Kg", "priceMin": "180", "priceMax": "210", "trend": "stable" }
+      ]
+    },
+    {
+      "name": "Alüminyum Hurdası",
+      "icon": "aluminum",
+      "badge": "Hızlı Alım",
+      "items": [
+        { "name": "Alüminyum Profil Çıkma (Temiz Doğrama)", "unit": "Kg", "priceMin": "95", "priceMax": "118", "trend": "up" },
+        { "name": "Tel Alüminyum (Saf İletken)", "unit": "Kg", "priceMin": "105", "priceMax": "130", "trend": "up" },
+        { "name": "Alüminyum Araiş (Levha Parçaları)", "unit": "Kg", "priceMin": "90", "priceMax": "112", "trend": "stable" },
+        { "name": "Alüminyum Jant Hurdası", "unit": "Kg", "priceMin": "110", "priceMax": "135", "trend": "up" },
+        { "name": "Kutu Alüminyum (İçecek Kutuları)", "unit": "Kg", "priceMin": "70", "priceMax": "88", "trend": "stable" },
+        { "name": "Alüminyum Talaşı (Temiz)", "unit": "Kg", "priceMin": "65", "priceMax": "80", "trend": "stable" }
+      ]
+    },
+    {
+      "name": "Demir & Çelik Hurdası",
+      "icon": "steel",
+      "badge": "Tonajlı",
+      "items": [
+        { "name": "DKP Hurda Demir (Pres & İmalat Artığı)", "unit": "Kg", "priceMin": "12.0", "priceMax": "14.2", "trend": "up" },
+        { "name": "Ekstra Hurda Demir (Ağır Sanayi Parçaları)", "unit": "Kg", "priceMin": "11.0", "priceMax": "12.8", "trend": "stable" },
+        { "name": "1. Grup Hurda Demir (İnşaat & Profil)", "unit": "Kg", "priceMin": "10.5", "priceMax": "12.2", "trend": "stable" },
+        { "name": "Demir Talaşı (Sanayi)", "unit": "Kg", "priceMin": "8.5", "priceMax": "10.0", "trend": "stable" },
+        { "name": "Pik Hurda Demir (Döküm Parçalar)", "unit": "Kg", "priceMin": "11.5", "priceMax": "13.0", "trend": "up" }
+      ]
+    },
+    {
+      "name": "Paslanmaz Krom & Çinko",
+      "icon": "stainless",
+      "badge": "Özel Sanayi",
+      "items": [
+        { "name": "304 Kalite Paslanmaz Krom Hurdası", "unit": "Kg", "priceMin": "68", "priceMax": "82", "trend": "up" },
+        { "name": "316 Kalite Paslanmaz Krom Hurdası", "unit": "Kg", "priceMin": "105", "priceMax": "125", "trend": "up" },
+        { "name": "430 Kalite Paslanmaz Krom Hurdası", "unit": "Kg", "priceMin": "28", "priceMax": "36", "trend": "stable" },
+        { "name": "Çinko Levha & Çatı Hurdası", "unit": "Kg", "priceMin": "85", "priceMax": "105", "trend": "up" },
+        { "name": "Kurşun Hurdası (Levha & Boru)", "unit": "Kg", "priceMin": "75", "priceMax": "90", "trend": "stable" }
+      ]
+    },
+    {
+      "name": "2. El Klima & Kombi Alımı",
+      "icon": "ac",
+      "badge": "Adet Başı Peşin",
+      "items": [
+        { "name": "9.000 - 12.000 BTU İnverter Klima (Çalışır)", "unit": "Adet", "priceMin": "2.500", "priceMax": "5.500", "trend": "up" },
+        { "name": "18.000 - 24.000 BTU Salon / Duvar Tipi (Çalışır)", "unit": "Adet", "priceMin": "4.500", "priceMax": "11.000", "trend": "up" },
+        { "name": "Arızalı / Hurda Split Klima (İç + Dış Ünite)", "unit": "Adet", "priceMin": "1.200", "priceMax": "2.500", "trend": "stable" },
+        { "name": "VRF / Chiller Merkezi Sistem Hurda Klima", "unit": "Keşif", "priceMin": "15.000", "priceMax": "95.000+", "trend": "up" },
+        { "name": "Çalışır 2. El Kombi (Hermetik / Yoğuşmalı)", "unit": "Adet", "priceMin": "1.800", "priceMax": "4.500", "trend": "stable" },
+        { "name": "Hurda / Arızalı Kombi (Bakır Eşanjörlü)", "unit": "Adet", "priceMin": "900", "priceMax": "1.800", "trend": "stable" }
+      ]
+    }
+  ]
+}

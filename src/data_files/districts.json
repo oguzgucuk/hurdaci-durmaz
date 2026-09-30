@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "ikitelli-hurdaci",
+    "name": "İkitelli Hurdacı",
+    "shortName": "İkitelli",
+    "region": "İstanbul Avrupa Yakası",
+    "deliveryTime": "30-45 Dakika",
+    "headline": "İkitelli OSB ve Çevresinde Adresten Hurda Alımı & Hassas Kantar",
+    "description": "İkitelli Organize Sanayi Bölgesi, Masko, Demirciler Sitesi ve Başakşehir genelinde fabrika artığı demir, bakır talaşı, sarı ve hurda kablolarınızı kendi vinçli araçlarımızla yerinden alıyoruz.",
+    "popularMetals": ["Bakır Talaşı & Lama", "DKP İmalat Artığı Demir", "Sarı Pirinç Talaşı", "Sanayi Kablosu", "2. El Klima & Chiller"],
+    "addressNote": "İkitelli Sanayi Sitesi ve tüm kooperatiflere 30 dakikada mobil tartım aracı sevk edilir."
+  },
+  {
+    "slug": "gebze-hurdaci",
+    "name": "Gebze Hurdacı",
+    "shortName": "Gebze",
+    "region": "Kocaeli & Dilovası",
+    "deliveryTime": "45-60 Dakika",
+    "headline": "Gebze OSB, Dilovası ve Çayırova Fabrika Hurda Alım Hizmeti",
+    "description": "Gebze Organize Sanayi Bölgesi, GOSB, TOSB ve Dilovası ağır sanayi tesislerindeki tonajlı hurda demir, çelik konstrüksiyon, paslanmaz krom ve fabrika söküm işlerini lisanslı ve güvenli şekilde yürütüyoruz.",
+    "popularMetals": ["Ağır Tonajlı Demir & Çelik", "304 & 316 Paslanmaz Krom", "Yeraltı Enerji Kablosu", "Fabrika Bozumu Makine", "Trafo & Elektrik Panosu"],
+    "addressNote": "GOSB, TOSB, Dilovası ve Çayırova tesislerine tonajlı kamyon ve dijital kantar desteği."
+  },
+  {
+    "slug": "umraniye-hurdaci",
+    "name": "Ümraniye Hurdacı",
+    "shortName": "Ümraniye",
+    "region": "İstanbul Anadolu Yakası",
+    "deliveryTime": "30-45 Dakika",
+    "headline": "Ümraniye, Dudullu, İMES ve DES Sanayi Sitelerinde Peşin Hurda Alımı",
+    "description": "Ümraniye merkez, Dudullu OSB, İMES Sanayi Sitesi ve KADOSAN çevresinde talaş, pres hurdası, sarı vana ve bakır boruları hassas dijital terazimizle tartıp nakit alıyoruz.",
+    "popularMetals": ["İMES Talaş Hurdası", "Kablo & Soyma Bakır", "Sarı Pirinç Parçaları", "2. El Klima & Kombi", "Alüminyum Doğrama Artığı"],
+    "addressNote": "Dudullu, İMES, DES ve KADOSAN esnafına aynı gün kapıda nakit teslimat."
+  },
+  {
+    "slug": "bagcilar-hurdaci",
+    "name": "Bağcılar Hurdacı",
+    "shortName": "Bağcılar",
+    "region": "İstanbul Avrupa Yakası",
+    "deliveryTime": "30 Dakika",
+    "headline": "Bağcılar ve Güngören Bölgesinde Adresten Peşin Hurda & Klima Alımı",
+    "description": "Bağcılar, Güngören Sanayi ve tekstil/atölye yoğunluklu mahallelerde biriken hurda demir, klima, kombi, alüminyum ve elektrik kablolarını kapınızdan nakit ödemeyle alıyoruz.",
+    "popularMetals": ["2. El Klima & Kombi", "Alüminyum Profil", "Demir & Sac Parçaları", "Tesisat Bakır Boruları", "Sarı Su Saati & Vana"],
+    "addressNote": "Kentsel dönüşüm binaları ve tekstil atölyeleri için hızlı söküm ve anında tartım."
+  },
+  {
+    "slug": "tuzla-hurdaci",
+    "name": "Tuzla Hurdacı",
+    "shortName": "Tuzla",
+    "region": "İstanbul Anadolu Yakası",
+    "deliveryTime": "45 Dakika",
+    "headline": "Tuzla Tersaneler, Deri OSB ve Fabrika Hurda Alım Merkezi",
+    "description": "Tuzla Tersaneler Bölgesi, Birlik OSB, Deri Organize ve Orhanlı lojistik bölgesinde gemi söküm metalleri, ağır çelik, kalın sanayi kablosu ve paslanmaz sac hurdalarını yerinde tartıyoruz.",
+    "popularMetals": ["Tersane Ağır Hurda Çelik", "Gemi & Sanayi Kablosu", "316 Paslanmaz", "DKP Sac Hurdası", "Sanayi Tipi Chiller & Klima"],
+    "addressNote": "Tersane ve organize sanayi tesislerine yüksek tonajlı vinç ve konteyner bırakma hizmeti."
+  },
+  {
+    "slug": "kartal-hurdaci",
+    "name": "Kartal Hurdacı",
+    "shortName": "Kartal",
+    "region": "İstanbul Anadolu Yakası",
+    "deliveryTime": "30-45 Dakika",
+    "headline": "Kartal ve Maltepe Genelinde Kentsel Dönüşüm & Adresten Hurda Alımı",
+    "description": "Kartal ve Maltepe sahil/E-5 aksında yıkımı yapılan kentsel dönüşüm binaları, çatı sökümleri, eski kalorifer kazanları ve 2. el klima kombi alımlarını profesyonelce gerçekleştiriyoruz.",
+    "popularMetals": ["İnşaat Yıkım Demiri", "Kazan & Kalorifer Boruları", "2. El Klima & Kombi", "Bakır Çatı Oluğu & Sacı", "Kablo Hurdaları"],
+    "addressNote": "Yıkım ve kentsel dönüşüm projelerinde yerinde keşif ve anlaşmalı toplu hurda alımı."
+  },
+  {
+    "slug": "esenyurt-hurdaci",
+    "name": "Esenyurt Hurdacı",
+    "shortName": "Esenyurt",
+    "region": "İstanbul Avrupa Yakası",
+    "deliveryTime": "30-45 Dakika",
+    "headline": "Esenyurt, Hadımköy ve Kıraç Sanayi Bölgelerinde Değerinde Hurda Alımı",
+    "description": "Esenyurt, Kıraç sanayi aksı ve Hadımköy lojistik/üretim tesislerinde çıkan plastik fabrikası metal kalıpları, pres demirleri, alüminyum ve elektrik panoları nakit değerlendirilir.",
+    "popularMetals": ["Kalıp & Ağır Demir", "Sanayi Alüminyumu", "Pano & Trafo Hurdası", "Kablo ve Motor Hurdası", "Klima Santrali Hurdası"],
+    "addressNote": "Hadımköy ve Kıraç sanayi sitelerine özel araçla aynı gün tartım garantisi."
+  },
+  {
+    "slug": "kadikoy-hurdaci",
+    "name": "Kadıköy Hurdacı",
+    "shortName": "Kadıköy",
+    "region": "İstanbul Anadolu Yakası",
+    "deliveryTime": "30-45 Dakika",
+    "headline": "Kadıköy ve Ataşehir'de Adrese Gelen Hurda & 2. El Klima Hizmeti",
+    "description": "Kadıköy merkez, Bostancı, Göztepe, Kozyatağı ve Ataşehir semtlerinde ev ve iş yerlerinizdeki eski klimaları duvardan sökerek alıyor; bakır boru, pirinç sarı ve demir hurdalarınızı nakit ödüyoruz.",
+    "popularMetals": ["2. El Split & Salon Tipi Klima", "Hermetik & Yoğuşmalı Kombi", "Sarı Musluk & Batarya", "Bakır Tesisat Borusu", "Alüminyum Doğrama"],
+    "addressNote": "Duvardan klima sökümü deneyimli ekibimizce duvara ve çevreye zarar vermeden yapılır."
+  }
+]

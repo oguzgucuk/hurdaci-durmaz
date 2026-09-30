@@ -3,7 +3,6 @@ import Meta from '../components/Meta.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingWhatsApp from '../components/ui/FloatingWhatsApp.astro';
-import QuickCallBar from '../components/ui/QuickCallBar.astro';
 import '../assets/styles/global.css';
 
 interface Props {
@@ -35,8 +34,5 @@ const { title, description, image, customWhatsAppMessage } = Astro.props;
 
     <!-- Persistent Floating WhatsApp CTA -->
     <FloatingWhatsApp customMessage={customWhatsAppMessage} />
-
-    <!-- Persistent Mobile Quick Call & WhatsApp Bar (<768px) -->
-    <QuickCallBar />
   </body>
 </html>

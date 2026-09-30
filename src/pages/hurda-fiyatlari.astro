@@ -1,0 +1,179 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import company from '../data_files/company.json';
+import priceData from '../data_files/hurda-fiyatlari.json';
+
+const pageTitle = "Güncel Hurda Fiyatları 2026 — Hurda Bakır, Kablo, Demir, Sarı Kg Fiyatı | Durmaz Metal";
+const pageDesc = "İstanbul ve Gebze güncel hurda fiyatları: Hurda bakır, kablo, alüminyum, demir ve 2. el klima alım fiyat listesi. Fotoğraf atın, 5 dakikada anında nakit fiyat alın.";
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent('Merhaba Durmaz Metal, web sitenizdeki güncel hurda fiyatlarını inceledim. Elimdeki hurda/cihaz için net fiyat teklifi almak istiyorum.')}`;
+const callUrl = `tel:${company.phoneRaw}`;
+---
+
+<MainLayout title={pageTitle} description={pageDesc}>
+  <!-- Page Header Banner -->
+  <section class="bg-gradient-to-b from-[#0e3b2e] to-[#134939] text-white py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <!-- Live Tag -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs sm:text-sm font-semibold mb-4 border border-white/15">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>{priceData.lastUpdated} · Londra Metal Borsası (LME) Endeksli</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+          Güncel Hurda Fiyatları <span class="text-amber-400">(2026 Fiyat Listesi)</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed mb-6">
+          İstanbul ve Gebze genelinde adresten hurda alımlarında geçerli ortalama piyasa fiyatlarıdır. Tonajlı sanayi hurdaları ve yüksek miktarlı alımlarda özel tavan fiyat teklifi sunuyoruz.
+        </p>
+
+        <!-- Fast Actions -->
+        <div class="flex flex-wrap items-center gap-3">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold text-sm sm:text-base shadow-lg hover:scale-102 transition-all"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+            </svg>
+            <span>Fotoğraf At · Anında Net Fiyat Al</span>
+          </a>
+          <a
+            href={callUrl}
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base border border-white/20 transition-all"
+          >
+            <svg class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>{company.phone}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Bar -->
+  <section class="bg-amber-50 border-b border-amber-200 py-3 text-xs sm:text-sm text-amber-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-amber-700 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span><strong>Fiyatlandırma Notu:</strong> {priceData.disclaimer}</span>
+      </div>
+      <span class="font-bold text-[#0e3b2e] whitespace-nowrap">✓ Kapıda Nakit & Dijital Kantar Fişi</span>
+    </div>
+  </section>
+
+  <!-- Price Tables Container -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
+      
+      {priceData.categories.map((category) => (
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <!-- Category Card Header -->
+          <div class="bg-slate-900 text-white px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-[#ea580c]"></span>
+              <h2 class="text-lg sm:text-xl font-bold tracking-tight text-white">{category.name}</h2>
+            </div>
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-white/10 text-slate-300">
+              {category.badge}
+            </span>
+          </div>
+
+          <!-- Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-100/80 text-slate-700 text-xs uppercase font-bold tracking-wider border-b border-slate-200">
+                <tr>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6">Hurda Malzeme Çeşidi</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 text-center">Birim</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 text-right">Tahmini Fiyat Aralığı</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 text-center hidden sm:table-cell">Piyasa Durumu</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 text-right">Hızlı Teklif</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                {category.items.map((item) => (
+                  <tr class="hover:bg-slate-50/80 transition-colors">
+                    <td class="py-4 px-4 sm:px-6 font-semibold text-slate-900">
+                      {item.name}
+                    </td>
+                    <td class="py-4 px-4 sm:px-6 text-center text-slate-600 font-medium">
+                      {item.unit}
+                    </td>
+                    <td class="py-4 px-4 sm:px-6 text-right font-extrabold text-[#0e3b2e] text-base sm:text-lg tabular-nums">
+                      {item.priceMin} - {item.priceMax} ₺
+                    </td>
+                    <td class="py-4 px-4 sm:px-6 text-center hidden sm:table-cell">
+                      {item.trend === 'up' ? (
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                          </svg>
+                          Yükselişte
+                        </span>
+                      ) : (
+                        <span class="inline-flex items-center gap-1 text-xs font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full">
+                          Dengeli
+                        </span>
+                      )}
+                    </td>
+                    <td class="py-4 px-4 sm:px-6 text-right">
+                      <a
+                        href={`https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(`Merhaba, ${item.name} satmak istiyorum. Güncel net fiyat teklifinizi alabilir miyim?`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all"
+                      >
+                        Teklif Al
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+
+      <!-- WhatsApp Conversion Box -->
+      <div class="rounded-2xl bg-gradient-to-r from-[#0e3b2e] to-[#135d46] text-white p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="px-3 py-1 text-xs font-bold uppercase rounded-full bg-amber-400 text-slate-900 inline-block mb-1">
+            Hızlı Ekspertiz
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+            Elinizdeki Hurdanın Değerini Hemen Öğrenin
+          </h3>
+          <p class="text-slate-200 text-sm sm:text-base max-w-xl">
+            Malzemenizin veya 2. el cihazınızın fotoğrafını WhatsApp üzerinden gönderin; uzman ekibimiz 5 dakika içinde anlık tavan fiyat teklifini iletsin.
+          </p>
+        </div>
+        <div class="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-sm sm:text-base shadow-lg transition-transform hover:scale-102"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+            </svg>
+            <span>WhatsApp ile Fotoğraf Gönder</span>
+          </a>
+          <a
+            href={callUrl}
+            class="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold text-sm sm:text-base shadow transition-colors"
+          >
+            <span>Hemen Ara: {company.phone}</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
