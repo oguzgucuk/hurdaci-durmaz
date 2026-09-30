@@ -1,0 +1,111 @@
+---
+import company from '../../data_files/company.json';
+
+const services = [
+  {
+    title: 'Kentsel Dönüşüm & Bina Yıkımı',
+    slug: 'kentsel-donusum-ve-bina-yikimi',
+    badge: 'Hurda Karşılığı Yıkım',
+    badgeClass: 'bg-amber-100 text-amber-900 border-amber-300',
+    desc: 'Kentsel dönüşüme giren binalarda hurda demir, çatı sacı, kapı ve pencere karşılığında profesyonel, iş güvenliği onaylı bina yıkımı ve moloz sahası tahliyesi.',
+    features: ['İş güvenliği sertifikalı uzman kadro', 'Ekskavatör ve hidrolik makas filosu', 'Hızlı saha temizliği ve moloz tahliyesi'],
+  },
+  {
+    title: 'Fabrika & Sanayi Tesisi Sökümü',
+    slug: 'endustriyel-makine-ve-ekipman-alimi',
+    badge: 'Tonajlı Sanayi',
+    badgeClass: 'bg-slate-100 text-slate-800 border-slate-300',
+    desc: 'Kapanan veya revizyona giren fabrikaların çelik konstrüksiyon, silo, boru hatları, havalandırma kanalları ve sundurmalarının oksijenle yerinde kesimi.',
+    features: ['Oksijen ve plazma ile yerinde kesim', 'Vinçli ağır tonaj yükleme kabiliyeti', 'Resmi kantar fişi & peşin likidite'],
+  },
+  {
+    title: '2. El Endüstriyel Makine Alımı',
+    slug: 'endustriyel-makine-ve-ekipman-alimi',
+    badge: 'Çalışır / Arızalı',
+    badgeClass: 'bg-orange-100 text-orange-900 border-orange-300',
+    desc: 'Atıl durumdaki veya yenilenen jeneratörler, sanayi tipi chiller soğutma grupları, trafolar, kompresörler, elektrik panoları ve torna tezgahları değerinde nakit alınır.',
+    features: ['Chiller ve VRF klima santralleri', 'Dizel sanayi jeneratörleri ve trafolar', 'Elektrik panoları ve bakır baralar'],
+  },
+  {
+    title: 'Adresten Hurda Alım Filosu',
+    slug: 'adresten-hurda-alimi',
+    badge: '1 Saatte Kapıda',
+    badgeClass: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+    desc: 'İstanbul geneli ve Gebze sanayisinde adrese özel servis. Kendi nakliye araçlarımız, hamaliye personelimiz ve dijital elektronik kantarımızla kapınızdayız.',
+    features: ['Küçük ve büyük tonajlı araç filosu', 'Yerinde gözünüzün önünde hassas tartım', 'Kapıda anında peşin nakit ödeme'],
+  },
+];
+---
+
+<section id="hizmetler" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Heading -->
+    <div class="space-y-3 pb-10 border-b border-slate-200/80">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200 text-xs font-bold tracking-wide">
+        <span>KURUMSAL SANAYİ VE TAAHHÜT HİZMETLERİ</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+        Yıkım, Söküm ve <span class="text-amber-600">Endüstriyel Alım</span> Çözümleri
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+        Şantiye, fabrika ve bina revizyonlarında ihtiyaç duyulan vinç, hidrolik makas ve iş güvenliği donanımıyla kurumsal güvence sağlıyoruz.
+      </p>
+    </div>
+
+    <!-- Services Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-10">
+      {services.map((service) => (
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:bg-white hover:border-amber-400 hover:shadow-md transition-all group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <span class={`px-2.5 py-0.5 rounded-full text-xs font-semibold border ${service.badgeClass}`}>
+                {service.badge}
+              </span>
+              <span class="text-xs font-medium text-slate-500">
+                {company.companyName} Güvencesi
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors font-display">
+              <a href={`/hizmetler/${service.slug}`}>{service.title}</a>
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              {service.desc}
+            </p>
+
+            <ul class="space-y-2 pt-2 text-xs font-medium text-slate-700">
+              {service.features.map((feat) => (
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-200/70 flex items-center justify-between">
+            <a
+              href={`https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(`Merhaba, ${service.title} hizmetiniz hakkında keşif ve fiyat teklifi almak istiyorum.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1.5"
+            >
+              <span>Keşif & Fiyat İste</span>
+              <span>→</span>
+            </a>
+
+            <a
+              href={`/hizmetler/${service.slug}`}
+              class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors underline"
+            >
+              Detayları İncele
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

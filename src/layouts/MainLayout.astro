@@ -1,0 +1,42 @@
+---
+import Meta from '../components/Meta.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/ui/FloatingWhatsApp.astro';
+import QuickCallBar from '../components/ui/QuickCallBar.astro';
+import '../assets/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  customWhatsAppMessage?: string;
+}
+
+const { title, description, image, customWhatsAppMessage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <Meta title={title} description={description} image={image} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[var(--color-paper)] text-[var(--color-ink)] antialiased selection:bg-[var(--color-accent)] selection:text-[var(--color-accent-ink)]">
+    <!-- Top Header -->
+    <Header />
+
+    <!-- Main Page Content -->
+    <main id="main-content" class="flex-1 w-full overflow-x-clip">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Persistent Floating WhatsApp CTA -->
+    <FloatingWhatsApp customMessage={customWhatsAppMessage} />
+
+    <!-- Persistent Mobile Quick Call & WhatsApp Bar (<768px) -->
+    <QuickCallBar />
+  </body>
+</html>

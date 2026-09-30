@@ -1,0 +1,47 @@
+{
+  "companyName": "Hurdacı Durmaz Metal",
+  "legalName": "Durmaz Metal Geri Dönüşüm ve Hurdacılık Hizmetleri",
+  "slogan": "Yerinde Değerinde Nakit Alım & Adresten Hurda Hizmeti",
+  "description": "Bakır, sarı, demir, alüminyum hurdası ve 2. el klima/kombi alımı. Hurdanızın fotoğrafını WhatsApp'tan atın, anında nakit fiyat verelim. Adresinizden tartıp teslim alıyoruz.",
+  "phone": "+90 541 623 88 81",
+  "phoneRaw": "+905416238881",
+  "whatsappNumber": "+90 541 623 88 81",
+  "whatsappRaw": "905416238881",
+  "defaultWhatsAppMessage": "Merhaba Durmaz Metal, elimde hurda / 2. el cihaz var. Fotoğrafını gönderip fiyat teklifi almak istiyorum.",
+  "klimaWhatsAppMessage": "Merhaba, satmak istediğim 2. el / hurda klima ve kombim var. Fiyat teklifi alabilir miyim?",
+  "email": "iletisim@durmazmetal.com",
+  "address": {
+    "street": "Sanayi Mahallesi, Hurdacılar Sitesi No: 12",
+    "district": "Güngören / İkitelli",
+    "city": "İstanbul",
+    "country": "Türkiye"
+  },
+  "workingHours": {
+    "weekdays": "07:30 - 20:00",
+    "saturday": "07:30 - 20:00",
+    "sunday": "Adresten Alım İçin 7/24 Açık",
+    "support": "7/24 WhatsApp Teklif Hattı"
+  },
+  "serviceAreas": [
+    "İstanbul Avrupa Yakası",
+    "İstanbul Anadolu Yakası",
+    "Kocaeli (Gebze Sanayi)"
+  ],
+  "corePillars": [
+    {
+      "title": "Adresten Hurda Alımı",
+      "desc": "Kendi araçlarımız ve profesyonel ekibimizle kapınıza geliyoruz, siz yorulmayın.",
+      "badge": "1 Saatte Kapıda"
+    },
+    {
+      "title": "Hassas Dijital Tartım",
+      "desc": "Gözünüzün önünde, elektronik kalibre kantarla şeffaf ve gramı gramına tartım yapıyoruz.",
+      "badge": "Gözünüzün Önünde"
+    },
+    {
+      "title": "Anında Değerinde Nakit",
+      "desc": "Tartım bittiği an elden peşin nakit veya anında IBAN banka transferi ile ödeme.",
+      "badge": "Anında Peşin"
+    }
+  ]
+}

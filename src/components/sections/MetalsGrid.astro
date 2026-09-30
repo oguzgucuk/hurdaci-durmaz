@@ -1,0 +1,149 @@
+---
+import company from '../../data_files/company.json';
+
+const metals = [
+  {
+    title: 'Bakır & Kablo Hurdası',
+    slug: 'bakir-ve-kablo-hurdasi',
+    subTypes: ['Soyma Bakır', 'Kırkambar Bakır', 'Lama Bakır', 'TTR & Antigron Kablo', 'Trafo Bakırı'],
+    badge: 'En Yüksek Fiyat',
+    badgeClass: 'bg-amber-100 text-amber-900 border-amber-300',
+    desc: 'Elektrik tesisatı, bina tadilatı ve şantiye kablo hurdalarınız güncel borsa katsayısı üzerinden hassas kantarla tartılır.',
+  },
+  {
+    title: 'Sarı (Pirinç) Hurdası',
+    slug: 'sari-pirinc-hurdasi',
+    subTypes: ['Musluk & Batarya', 'Su Saatleri', 'Vana & Fittings', 'Sarı Talaşı', 'Radyatör'],
+    badge: 'Yüksek Değer',
+    badgeClass: 'bg-orange-100 text-orange-900 border-orange-300',
+    desc: 'Sıhhi tesisat sökümleri, su armatürleri ve pirinç talaşları dökümhane teslim fiyatlarıyla kapıda nakit alınır.',
+  },
+  {
+    title: 'Demir & Çelik Hurdası',
+    slug: 'demir-ve-celik-hurdasi',
+    subTypes: ['İnşaat Demiri', 'DKP Sac Hurdası', 'Profil & Boru', 'Döküm Demir', 'Ağır Sanayi Çeliği'],
+    badge: 'Tonajlı Alım',
+    badgeClass: 'bg-slate-100 text-slate-800 border-slate-300',
+    desc: 'Şantiye fazlası, bina yıkım demirleri ve fabrika atıkları vinçli ve damperli araç filomuzla yerinden yüklenir.',
+  },
+  {
+    title: 'Alüminyum Hurdası',
+    slug: 'aluminyum-hurdasi',
+    subTypes: ['Alüminyum Profil', 'Araiş Levha', 'Oto Jant Hurdası', 'Matbaa Kalıbı', 'Kutu Alüminyum'],
+    badge: 'Hassas Tartım',
+    badgeClass: 'bg-blue-100 text-blue-900 border-blue-300',
+    desc: 'Doğrama atölyeleri, matbaalar ve sanayi imalat artıklarınız fire kaybı olmadan yerinde tartılır.',
+  },
+  {
+    title: 'Paslanmaz (Krom) Hurdası',
+    slug: 'paslanmaz-krom-hurdasi',
+    subTypes: ['304 Kalite Paslanmaz', '316 Kalite Krom', 'Sanayi Tankları', 'Endüstriyel Mutfak', 'Krom Boru'],
+    badge: 'Özel Analiz',
+    badgeClass: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+    desc: 'Mutfak yenilemeleri, gıda tesisi ekipmanları ve kimya sanayi paslanmazları asit testiyle net fiyatlandırılır.',
+  },
+  {
+    title: 'Çinko & Kurşun Hurdası',
+    slug: 'cinko-hurdasi',
+    subTypes: ['Çatı Oluğu Çinko', 'Matbaa Çinkosu', 'Akü Kurşunu', 'Kablo Kurşunu', 'Levha Kurşun'],
+    badge: 'Adresten Teslim',
+    badgeClass: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+    desc: 'Çatı kaplama sökümleri, röntgen odası kurşunları ve akü hurdaları çevre lisansına uygun şekilde nakit alınır.',
+  },
+];
+---
+
+<section id="hurda-cesitleri" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Heading -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-slate-200/80">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold tracking-wide">
+          <span>HURDA ÇEŞİTLERİ VİTRİNİ</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+          Alımını Yaptığımız <span class="text-amber-600">Tüm Hurda Metaller</span>
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+          Tüm metalleriniz Londra Metal Borsası (LME) ve yerel serbest piyasa kurlarına göre şeffaf fiyatlandırılır, kantar fişiyle teslim alınır.
+        </p>
+      </div>
+
+      <div>
+        <a
+          href="/hurda-cesitleri"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:border-amber-500 hover:text-amber-700 text-sm font-semibold shadow-xs transition-all"
+        >
+          <span>Tüm Detayları Gör</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Metals Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+      {metals.map((metal) => {
+        const waPriceUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(`Merhaba Durmaz Metal, elimde ${metal.title} var. Güncel fiyatınızı öğrenebilir miyim?`)}`;
+        return (
+          <div class="rounded-2xl bg-white border border-slate-200/80 p-6 flex flex-col justify-between hover:border-amber-400/70 hover:shadow-md transition-all group">
+            <div class="space-y-4">
+              <!-- Top Row: Title & Badge -->
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors font-display">
+                  <a href={`/hurda-cesitleri/${metal.slug}`}>{metal.title}</a>
+                </h3>
+                <span class={`px-2.5 py-0.5 rounded-full text-xs font-semibold border shrink-0 ${metal.badgeClass}`}>
+                  {metal.badge}
+                </span>
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {metal.desc}
+              </p>
+
+              <!-- Subtypes Pills -->
+              <div class="pt-2">
+                <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                  Kabul Edilen Çeşitler:
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  {metal.subTypes.map((sub) => (
+                    <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">
+                      {sub}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Bottom Action -->
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between gap-3">
+              <a
+                href={waPriceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
+              >
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+                </svg>
+                <span>Fiyat Sor</span>
+              </a>
+
+              <a
+                href={`/hurda-cesitleri/${metal.slug}`}
+                class="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+              >
+                <span>İncele</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

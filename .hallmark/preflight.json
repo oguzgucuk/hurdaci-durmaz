@@ -1,0 +1,10 @@
+{
+  "scan_date": "2026-09-30",
+  "framework": "Astro 5 (SSG)",
+  "styling": "Tailwind CSS v4 + Hallmark tokens (tokens.css)",
+  "components": "Astro + React 19 Islands + Lucide React",
+  "content_system": "Astro Content Collections",
+  "motion_stance": "motion-cut (css transforms + reduced-motion support)",
+  "font_stack": "Plus Jakarta Sans + JetBrains Mono",
+  "palette": "Industrial Custom OKLCH (Paper: #0B0F19, Steel: #1E293B, Amber: #F59E0B, Copper: #EA580C, WhatsApp: #25D366)"
+}

@@ -1,0 +1,189 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import company from '../data_files/company.json';
+
+const callUrl = `tel:${company.phoneRaw}`;
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.defaultWhatsAppMessage)}`;
+
+const title = "İletişim & Konum — Hurdacı Durmaz Metal | Telefon & WhatsApp";
+const description = "Hurdacı Durmaz Metal iletişim bilgileri, telefon numarası, WhatsApp teklif hattı, çalışma saatleri ve adresten hurda alım bölgeleri.";
+---
+
+<MainLayout title={title} description={description}>
+  <!-- Header -->
+  <section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold tracking-wide">
+          <span>7/24 ADRESTEN ALIM VE TEKLİF HATTI</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-display tracking-tight">
+          İletişim & Konum
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Hurdalarınızın veya 2. el cihazlarınızın fotoğrafını WhatsApp'tan gönderin ya da doğrudan telefonla arayarak 1 saat içinde adresinize araç talep edin.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Grid -->
+  <section class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Direct Contact Information Cards -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-6 sm:p-8 space-y-6 shadow-xs">
+            <h2 class="text-xl font-bold text-slate-900 font-display border-b border-slate-200 pb-4">
+              Doğrudan Ulaşım Kanalları
+            </h2>
+
+            <div class="space-y-6 text-sm">
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Telefon Numarası:</div>
+                  <a href={callUrl} class="text-xl font-bold text-slate-900 hover:text-amber-600 block pt-0.5 tabular-nums transition-colors">
+                    {company.phone}
+                  </a>
+                  <span class="text-xs text-slate-500">Doğrudan usta hattı • Hemen arayın</span>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide">WhatsApp Fotoğraf Hattı:</div>
+                  <a href={waUrl} target="_blank" rel="noopener noreferrer" class="text-xl font-bold text-emerald-700 hover:underline block pt-0.5 tabular-nums">
+                    {company.phone}
+                  </a>
+                  <span class="text-xs text-slate-500">Fotoğraf atın, 5 dakikada anında fiyat verelim</span>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Merkez Saha & Depo:</div>
+                  <div class="font-bold text-slate-900 pt-0.5">
+                    {company.address.street}
+                  </div>
+                  <div class="text-xs text-slate-600">
+                    {company.address.district} / {company.address.city}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Working Hours -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Çalışma Saatleri:</div>
+                  <div class="font-semibold text-slate-900 pt-0.5">{company.workingHours.weekdays}</div>
+                  <div class="text-xs text-amber-700 font-semibold">{company.workingHours.sunday}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Fast Form & Location Guidance -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-6 sm:p-8 space-y-5 shadow-xs">
+            <h2 class="text-xl font-bold text-slate-900 font-display border-b border-slate-200 pb-4">
+              Hızlı WhatsApp Fiyat Formu
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Hurdanızın türünü ve yaklaşık miktarını belirtin, tek tuşla WhatsApp üzerinden ustanızdan fiyat alın:
+            </p>
+
+            <form
+              id="contact-wa-form"
+              class="space-y-4"
+              onsubmit={`
+                event.preventDefault();
+                const metal = document.getElementById('form-metal').value;
+                const loc = document.getElementById('form-loc').value;
+                const note = document.getElementById('form-note').value;
+                const msg = 'Merhaba Durmaz Metal,\\n\\nMalzeme: ' + metal + '\\nKonum/İlçe: ' + loc + '\\nAçıklama: ' + note + '\\n\\nFiyat ve adresten alım için bilgi almak istiyorum.';
+                window.open('https://wa.me/905416238881?text=' + encodeURIComponent(msg), '_blank');
+              `}
+            >
+              <div>
+                <label for="form-metal" class="text-xs font-semibold text-slate-700 block mb-1">
+                  Hurda / Cihaz Türü:
+                </label>
+                <select
+                  id="form-metal"
+                  class="w-full h-11 px-3.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option>Bakır & Kablo Hurdası</option>
+                  <option>2. El Klima & Kombi</option>
+                  <option>Sarı (Pirinç) Musluk & Vana</option>
+                  <option>Alüminyum Profil & Jant</option>
+                  <option>Demir & Çelik Hurdası</option>
+                  <option>Paslanmaz Krom Hurdası</option>
+                  <option>Bina Yıkımı & Fabrika Sökümü</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="form-loc" class="text-xs font-semibold text-slate-700 block mb-1">
+                  Bulunduğunuz İlçe / Semt:
+                </label>
+                <input
+                  id="form-loc"
+                  type="text"
+                  required
+                  placeholder="Örn: Güngören, Bağcılar, Kadıköy, Gebze vb."
+                  class="w-full h-11 px-3.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+
+              <div>
+                <label for="form-note" class="text-xs font-semibold text-slate-700 block mb-1">
+                  Açıklama / Tahmini Kilo:
+                </label>
+                <textarea
+                  id="form-note"
+                  rows="3"
+                  placeholder="Örn: Yaklaşık 80 kg bakır kablo ve 1 adet 18.000 BTU klima var..."
+                  class="w-full p-3.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full flex items-center justify-center gap-2 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
+              >
+                <span>WhatsApp İle Teklifi İlet</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

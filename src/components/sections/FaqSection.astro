@@ -1,0 +1,42 @@
+---
+import company from '../../data_files/company.json';
+import { FaqAccordion } from '../ui/FaqAccordion';
+---
+
+<section id="sikca-sorulan-sorular" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Heading -->
+    <div class="text-center space-y-3 pb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200 text-xs font-bold tracking-wide">
+        <span>MERAK EDİLENLER</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+        Sıkça Sorulan <span class="text-amber-600">Sorular</span>
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
+        Hurda metallerinizi ve 2. el cihazlarınızı değerlendirirken aklınıza takılan tüm soruların şeffaf yanıtları.
+      </p>
+    </div>
+
+    <!-- Shadcn UI Radix FAQ Accordion -->
+    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xs">
+      <FaqAccordion client:visible />
+    </div>
+
+    <!-- More Questions Notice -->
+    <div class="mt-8 p-6 rounded-2xl bg-white border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+      <div class="text-center sm:text-left">
+        <div class="font-bold text-sm text-slate-900">Aklınıza takılan başka bir hurda veya cihaz mı var?</div>
+        <div class="text-xs text-slate-500 mt-0.5">Ustamıza WhatsApp'tan fotoğraf atabilir veya hemen arayabilirsiniz.</div>
+      </div>
+      <a
+        href={`tel:${company.phoneRaw}`}
+        class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-bold shadow-xs transition-all whitespace-nowrap"
+      >
+        📞 {company.phone}
+      </a>
+    </div>
+
+  </div>
+</section>

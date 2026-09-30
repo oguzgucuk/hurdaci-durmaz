@@ -1,0 +1,151 @@
+---
+import company from '../../data_files/company.json';
+import { FastQuoteModal } from '../ui/FastQuoteModal';
+
+const klimaWaUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.klimaWhatsAppMessage)}`;
+const callUrl = `tel:${company.phoneRaw}`;
+---
+
+<section id="ikinci-el-klima-kombi-vitrini" class="py-16 sm:py-24 bg-white border-b border-slate-200/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Flagship Architecture Showcase Box -->
+    <div class="rounded-2xl bg-slate-50 border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+      
+      <!-- Top Tagline -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-900 border border-orange-200/80 text-xs font-bold tracking-wide">
+          <svg class="w-3.5 h-3.5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>ÖZEL VİTRİN HİZMETİ</span>
+        </div>
+        <div class="text-xs font-medium text-slate-500">
+          Split • Salon Tipi • Kaset Tipi • VRF • Hermetik Kombi
+        </div>
+      </div>
+
+      <!-- Headline & Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">
+            Eski veya Çalışır Durumdaki <br />
+            <span class="text-orange-600">Klima ve Kombilerinizi</span> <br />
+            Değerinde Nakit Alıyoruz.
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+            İster adresinizden profesyonel ekibimiz güvenle söksün, ister işletmemize getirin. 
+            Hurda veya 2. el tüm marka split, VRF, salon ve kaset tipi klima üniteleri ile kombileri güncel piyasa değerinden anında peşin nakit alıyoruz.
+          </p>
+
+          <!-- 4 Core Advantages Checklist -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+              <div class="w-7 h-7 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                ✓
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900">Ücretsiz Demontaj</h3>
+                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Duvara ve tesisata zarar vermeden, gaz kaçağı olmadan uzman söküm.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+              <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-xs">
+                ✓
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900">Çalışan Cihaza Ek Değer</h3>
+                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Hurda metal fiyatından değil, 2. el cihaz piyasa değerinden yüksek teklif.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+              <div class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 font-bold text-xs">
+                ✓
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900">Toplu Tesis & Plaza Alımı</h3>
+                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Otel, ofis, fabrika ve bina revizyonlarında onlarca cihazı tek seferde alım.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+              <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 font-bold text-xs">
+                ✓
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-slate-900">Yerinde Anında Nakit</h3>
+                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Cihazı yerinden söker sökmez kapıda elden nakit veya anında FAST transferi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Fast Quotation Card -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white border border-orange-200/80 shadow-md space-y-5">
+            <div class="space-y-1.5">
+              <div class="inline-block px-2.5 py-0.5 text-[11px] font-bold uppercase rounded-md bg-orange-50 text-orange-700 border border-orange-200">
+                Klima & Kombi Değerleme
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 font-display">
+                Cihazınız Kaç Para Eder?
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                İç ve dış ünitenin fotoğrafını veya marka/model bilgisini WhatsApp'tan atın; çalışma durumu ve BTU kapasitesine göre 5 dakikada net fiyat verelim.
+              </p>
+            </div>
+
+            <!-- Supported Brands Pill List -->
+            <div class="py-2 border-y border-slate-100">
+              <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                Alım Yapılan Popüler Markalar:
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-xs text-slate-700 font-medium">
+                <span class="px-2 py-0.5 rounded bg-slate-100">Daikin</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">Mitsubishi</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">Arçelik</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">DemirDöküm</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">Carrier</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">Bosch</span>
+                <span class="px-2 py-0.5 rounded bg-slate-100">Tüm Markalar</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2.5 pt-1">
+              <a
+                href={klimaWaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold shadow-md shadow-emerald-950/20 transition-all hover:scale-[1.01]"
+              >
+                <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+                </svg>
+                <span>WhatsApp ile Klima Fotoğrafı At</span>
+              </a>
+
+              <a
+                href={callUrl}
+                class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition-colors"
+              >
+                <svg class="w-4 h-4 text-orange-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Ustayla Telefonla Görüş ({company.phone})</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

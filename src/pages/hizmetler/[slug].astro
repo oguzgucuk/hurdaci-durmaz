@@ -1,0 +1,159 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, render } from 'astro:content';
+import company from '../../data_files/company.json';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+
+const callUrl = `tel:${company.phoneRaw}`;
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(`Merhaba Durmaz Metal, ${service.data.title} hizmetinizle ilgili detaylı görüşmek ve fiyat teklifi almak istiyorum.`)}`;
+
+const pageTitle = `${service.data.title} — Hurdacı Durmaz Metal`;
+const pageDesc = `${service.data.description} İstanbul ve Gebze sanayisinde 1 saatte adrese ekip ve araç yönlendirmesi.`;
+---
+
+<MainLayout title={pageTitle} description={pageDesc}>
+  <!-- Top Breadcrumb & Heading -->
+  <section class="py-12 lg:py-16 bg-[var(--color-paper-2)] border-b border-[var(--color-rule)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center gap-2 text-xs font-mono text-[var(--color-ink-faint)] pb-4">
+        <a href="/" class="hover:text-[var(--color-accent)]">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/hizmetler" class="hover:text-[var(--color-accent)]">Hizmetlerimiz</a>
+        <span>/</span>
+        <span class="text-[var(--color-ink)] font-semibold">{service.data.title}</span>
+      </nav>
+
+      <div class="max-w-4xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[var(--color-paper-3)] text-[var(--color-accent)] font-mono text-xs uppercase font-bold tracking-wider">
+          <span>PROFESYONEL VE GÜVENİLİR TAAHHÜT</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--color-ink)] uppercase font-display tracking-tight">
+          {service.data.title}
+        </h1>
+        <p class="text-base sm:text-lg text-[var(--color-ink-muted)] leading-relaxed">
+          {service.data.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content & Sidebar -->
+  <section class="py-16 bg-[var(--color-paper)] border-b border-[var(--color-rule)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Article Content -->
+        <article class="lg:col-span-8 space-y-8 prose prose-invert max-w-none text-[var(--color-ink-muted)]">
+          <div class="p-6 rounded-xl bg-[var(--color-paper-2)] border border-[var(--color-rule)]">
+            <h2 class="text-lg font-bold text-[var(--color-ink)] font-display uppercase tracking-tight mb-3">
+              Bu Hizmette Sağladığımız Standartlar
+            </h2>
+            <ul class="space-y-2 text-sm text-[var(--color-ink)]">
+              {service.data.benefits.map((benefit) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-[var(--color-accent)] font-bold">✓</span>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Markdown Content Body -->
+          <div class="content-body space-y-6 text-sm sm:text-base leading-relaxed">
+            <Content />
+          </div>
+
+          <!-- Bottom Action Box -->
+          <div class="p-8 rounded-xl bg-[var(--color-paper-2)] border-2 border-[var(--color-accent)]/30 space-y-4 not-prose">
+            <h3 class="text-xl font-bold text-[var(--color-ink)] uppercase font-display">
+              {service.data.title} İçin Keşif ve Fiyat Alın
+            </h3>
+            <p class="text-xs sm:text-sm text-[var(--color-ink-muted)]">
+              Bize telefonla ulaşabilir ya da doğrudan WhatsApp'tan sahanın veya malzemelerin fotoğrafını göndererek ücretsiz ön keşif talep edebilirsiniz.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-6 py-3 rounded-lg btn-whatsapp font-bold text-sm flex items-center gap-2 shadow-lg"
+              >
+                <span>WhatsApp İle Ulaş</span>
+              </a>
+              <a
+                href={callUrl}
+                class="px-6 py-3 rounded-lg btn-amber font-bold text-sm flex items-center gap-2 shadow-lg"
+              >
+                <span>Hemen Ara: {company.phone}</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Sidebar -->
+        <aside class="lg:col-span-4 space-y-6">
+          <div class="sticky top-6 space-y-6">
+            <div class="rounded-xl bg-[var(--color-paper-2)] border border-[var(--color-rule)] p-6 space-y-4">
+              <h3 class="text-sm font-mono font-bold uppercase text-[var(--color-accent)] tracking-wider border-b border-[var(--color-rule-subtle)] pb-2">
+                Hemen İletişime Geçin
+              </h3>
+
+              <div class="space-y-3 text-xs text-[var(--color-ink-muted)]">
+                <div>
+                  <span class="text-[var(--color-ink)] font-bold block">Adres Servisi:</span>
+                  <span>İstanbul Tümü & Gebze Bölgesi</span>
+                </div>
+                <div>
+                  <span class="text-[var(--color-ink)] font-bold block">Ödeme Türü:</span>
+                  <span>Anında Peşin Nakit / Banka Transferi</span>
+                </div>
+                <div>
+                  <span class="text-[var(--color-ink)] font-bold block">Çalışma Saatleri:</span>
+                  <span>Haftaiçi & Cumartesi 07:30 - 20:00 (Acil 7/24)</span>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-[var(--color-rule-subtle)] space-y-2.5">
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full flex items-center justify-center gap-2 py-3 rounded-lg btn-whatsapp font-bold text-xs"
+                >
+                  WhatsApp'tan Yazın
+                </a>
+                <a
+                  href={callUrl}
+                  class="w-full flex items-center justify-center gap-2 py-3 rounded-lg btn-outline font-bold text-xs"
+                >
+                  Telefon: {company.phone}
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl bg-[var(--color-paper-3)] border border-[var(--color-rule)] space-y-2">
+              <div class="text-xs font-mono text-[var(--color-copper)] font-bold uppercase">2. El Klima & Kombi</div>
+              <p class="text-xs text-[var(--color-ink-muted)]">
+                Klimalarınızı gazını kaçırmadan yerinden söküp değerinde alıyoruz.
+              </p>
+              <a href="/ikinci-el-klima-kombi" class="text-xs font-bold text-[var(--color-copper)] hover:underline inline-block pt-1">
+                Özel Klima Sayfası →
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,148 @@
+@import './tokens.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-paper-3: var(--color-paper-3);
+  --color-paper-4: var(--color-paper-4);
+  --color-paper-dark: var(--color-paper-dark);
+  --color-paper-dark-2: var(--color-paper-dark-2);
+
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-ink-on-dark: var(--color-ink-on-dark);
+  --color-ink-on-dark-muted: var(--color-ink-on-dark-muted);
+
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-ink: var(--color-accent-ink);
+  --color-accent-subtle: var(--color-accent-subtle);
+
+  --color-copper: var(--color-copper);
+  --color-copper-hover: var(--color-copper-hover);
+  --color-copper-ink: var(--color-copper-ink);
+  --color-copper-subtle: var(--color-copper-subtle);
+
+  --color-whatsapp: var(--color-whatsapp);
+  --color-whatsapp-hover: var(--color-whatsapp-hover);
+  --color-whatsapp-ink: var(--color-whatsapp-ink);
+  --color-whatsapp-subtle: var(--color-whatsapp-subtle);
+
+  --color-rule: var(--color-rule);
+  --color-rule-subtle: var(--color-rule-subtle);
+  --color-rule-dark: var(--color-rule-dark);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+/* Base Setup */
+html,
+body {
+  overflow-x: clip;
+  min-height: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Rules: Normal Roman Headers (No Italic Slop) */
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-display);
+  font-style: normal !important;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+/* Numeric alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Prevent button/link text wrap */
+.btn-nowrap {
+  white-space: nowrap;
+}
+
+/* Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Button & Interactive Utility Classes */
+.btn-amber {
+  background-color: var(--color-accent);
+  color: #0f172a;
+  font-weight: 700;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.btn-amber:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+.btn-amber:active {
+  transform: translateY(0);
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+}
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+.btn-copper {
+  background-color: var(--color-copper);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.btn-copper:hover {
+  background-color: var(--color-copper-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+.btn-copper:active {
+  transform: translateY(0);
+}
+
+/* Subtle Modern Card Style */
+.modern-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all var(--dur-med) var(--ease-out);
+}
+.modern-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

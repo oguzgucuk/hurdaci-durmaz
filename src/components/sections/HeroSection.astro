@@ -1,0 +1,124 @@
+---
+import company from '../../data_files/company.json';
+import { FastQuoteModal } from '../ui/FastQuoteModal';
+
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.defaultWhatsAppMessage)}`;
+const callUrl = `tel:${company.phoneRaw}`;
+---
+
+<section
+  id="hero"
+  class={`relative min-h-[100dvh] lg:h-screen w-full flex flex-col justify-center items-center overflow-hidden ${className}`}
+>
+  <!-- Full-Screen Cinematic Daylight Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/hero/hero-durmaz-facility.jpg"
+      alt="Hurdacı Durmaz Metal - Tesis, Modern Araç Filosu ve Hassas Dijital Kantar ile Adresten Hurda Alımı"
+      width="1920"
+      height="1080"
+      class="w-full h-full object-cover object-center"
+      fetchpriority="high"
+      loading="eager"
+    />
+
+    <!-- Top Gradient for Crystal-Clear Header Navigation -->
+    <div class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-transparent pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Architectural Atmosphere Overlays -->
+    <div class="absolute inset-0 bg-slate-950/45 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/25 to-slate-950/85 pointer-events-none" aria-hidden="true"></div>
+  </div>
+
+  <!-- Center Architectural Body -->
+  <div class="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-10 sm:pb-12 text-center flex flex-col items-center justify-center">
+    
+    <!-- Trust Status Pill -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-white/20 text-slate-200 text-xs sm:text-sm font-medium backdrop-blur-md shadow-sm">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-semibold text-white">İstanbul & Gebze Geneli:</span>
+      <span>1 Saatte Adrese Özel Araç ve Hassas Tartım</span>
+    </div>
+
+    <!-- Main H1 Headline -->
+    <h1 class="font-display text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] drop-shadow-md max-w-4xl mx-auto break-words mt-5">
+      Metalleriniz ve <span class="text-amber-400">2. El Cihazlarınız</span> Değerinde Nakite Dönüşsün.
+    </h1>
+
+    <!-- Descriptive Subtitle -->
+    <p class="text-sm sm:text-lg lg:text-xl text-slate-100 leading-relaxed font-normal max-w-3xl mx-auto mt-4 sm:mt-5 drop-shadow-sm">
+      Bakır, kablo, sarı, alüminyum ve demir hurdalarınızı kendi araçlarımızla adresinizden teslim alıyor; elektronik kalibre kantarla şeffafça tartıp kapıda anında peşin nakit ödüyoruz.
+    </p>
+
+    <!-- Service Scope Strip -->
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3.5 gap-y-1 text-xs sm:text-sm font-semibold text-slate-200 tracking-wide drop-shadow-sm">
+      <span class="text-white">Bakır & Kablo Hurdası</span>
+      <span class="text-white/40 font-light hidden xs:inline" aria-hidden="true">|</span>
+      <span class="text-amber-300">2. El Klima & Kombi</span>
+      <span class="text-white/40 font-light hidden xs:inline" aria-hidden="true">|</span>
+      <span class="text-white">Adresten Hassas Tartım</span>
+      <span class="text-white/40 font-light hidden xs:inline" aria-hidden="true">|</span>
+      <span class="text-emerald-300">Kapıda Peşin Nakit</span>
+    </div>
+
+    <!-- Action Buttons (FastQuoteModal + WhatsApp + Call) -->
+    <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+      <!-- Shadcn UI FastQuoteModal -->
+      <div class="w-full sm:w-auto">
+        <FastQuoteModal client:load buttonText="Anında Fiyat Teklifi Al" variant="amber" size="lg" />
+      </div>
+
+      <!-- Direct WhatsApp Action -->
+      <a
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-lg shadow-emerald-950/30 transition-all gap-2.5 whitespace-nowrap"
+      >
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+        </svg>
+        <span>WhatsApp: 5 Dk'da Fiyat Al</span>
+      </a>
+
+      <!-- Direct Phone Call Action -->
+      <a
+        href={callUrl}
+        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-xs sm:text-sm font-bold text-white bg-slate-900/70 hover:bg-slate-900/90 rounded-lg border border-white/25 transition-all gap-2.5 backdrop-blur-md shadow-sm whitespace-nowrap"
+      >
+        <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        <span>Hemen Arayın: <strong>{company.phone}</strong></span>
+      </a>
+    </div>
+
+    <!-- Architectural Metrics Bar -->
+    <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/20 w-full max-w-2xl mx-auto">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 divide-y sm:divide-y-0 sm:divide-x divide-white/20 text-center">
+        <div class="px-2 pt-2 sm:pt-0">
+          <div class="font-display text-xl sm:text-2xl font-extrabold text-amber-400 tracking-tight tabular-nums">1 Saat</div>
+          <div class="text-[11px] sm:text-xs text-slate-200 font-medium mt-0.5">Adrese Hızlı Servis</div>
+        </div>
+        <div class="px-2 pt-2 sm:pt-0">
+          <div class="font-display text-xl sm:text-2xl font-extrabold text-white tracking-tight tabular-nums">%100</div>
+          <div class="text-[11px] sm:text-xs text-slate-200 font-medium mt-0.5">Şeffaf Dijital Tartım</div>
+        </div>
+        <div class="px-2 pt-2 sm:pt-0">
+          <div class="font-display text-xl sm:text-2xl font-extrabold text-emerald-400 tracking-tight tabular-nums">Peşin</div>
+          <div class="text-[11px] sm:text-xs text-slate-200 font-medium mt-0.5">Kapıda Anında Ödeme</div>
+        </div>
+        <div class="px-2 pt-2 sm:pt-0">
+          <div class="font-display text-xl sm:text-2xl font-extrabold text-slate-100 tracking-tight tabular-nums">20+ Yıl</div>
+          <div class="text-[11px] sm:text-xs text-slate-200 font-medium mt-0.5">Sektörel Güven</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import TrustBadges from '../components/sections/TrustBadges.astro';
+import KlimaSpotlight from '../components/sections/KlimaSpotlight.astro';
+import MetalsGrid from '../components/sections/MetalsGrid.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import WhyUsSection from '../components/sections/WhyUsSection.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import ContactBanner from '../components/sections/ContactBanner.astro';
+import company from '../data_files/company.json';
+
+const pageTitle = `${company.companyName} — Adresten Hurda & 2. El Klima Alımı | Değerinde Nakit`;
+const pageDesc = "İstanbul ve Gebze genelinde bakır, sarı, demir hurdaları ile 2. el klima ve kombilerinizi adresinizden hassas kantarla tartıp anında nakit alıyoruz.";
+---
+
+<MainLayout title={pageTitle} description={pageDesc}>
+  <!-- Hero Section with Immediate CTAs -->
+  <HeroSection />
+
+  <!-- 3 Trust Badges: Adresten Alım, Hassas Tartım, Peşin Nakit -->
+  <TrustBadges />
+
+  <!-- 2. EL KLİMA & KOMBİ ÖZEL VİTRİN BÖLÜMÜ (Müşterinin Hassas Talebi) -->
+  <KlimaSpotlight />
+
+  <!-- Hurda Çeşitleri Vitrini (Bakır, Sarı, Demir, Alüminyum, Paslanmaz, Çinko) -->
+  <MetalsGrid />
+
+  <!-- 3 Kolay Adımda Satış Süreci -->
+  <ProcessSteps />
+
+  <!-- Büyük Ölçekli Sanayi & Yıkım Hizmetleri -->
+  <ServicesGrid />
+
+  <!-- Neden Durmaz Metal? (Güven, Kantar Fişi, Şeffaf Ticaret) -->
+  <WhyUsSection />
+
+  <!-- Sıkça Sorulan Sorular -->
+  <FaqSection />
+
+  <!-- Kapanış İletişim Çağrısı -->
+  <ContactBanner />
+</MainLayout>

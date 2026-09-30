@@ -1,0 +1,134 @@
+---
+import company from '../../data_files/company.json';
+
+const callUrl = `tel:${company.phoneRaw}`;
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.defaultWhatsAppMessage)}`;
+---
+
+<section class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left Column: Trust Pillars -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold tracking-wide">
+          <span>ŞEFFAF TİCARET & DÜRÜSTLÜK</span>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">
+          Neden <span class="text-amber-600">Hurdacı Durmaz Metal</span> ile Çalışmalısınız?
+        </h2>
+
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Geri dönüşüm ve hurdacılık güvene ve hassas tartıma dayalı bir hizmettir. Yılların birikimiyle İstanbul ve Gebze sanayisinde binlerce bireysel ve kurumsal müşterimize şeffaf, dürüst ve anında nakit ticaret sunduk.
+        </p>
+
+        <div class="space-y-4 pt-2">
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              ✓
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">Kalibre Onaylı Elektronik Dijital Kantar</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Gramı gramına doğru tartım. Tartım gözünüzün önünde yapılır ve resmi tartım fişi düzenlenir.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-full bg-orange-100 text-orange-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              ✓
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">Kapıda Peşin Nakit & Anında Havale</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Tartım bittiği an paranız elden nakit veya banka hesabınıza FAST ile aktarılır. Vadeli çek veya bekleme yoktur.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              ✓
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">Hızlı Adresten Alım Desteği</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Şantiye tahliyeleri, fabrika atıkları ve ev temizliklerinde aynı gün içinde araç yönlendirmesi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Verification Stats & Fast Call Card -->
+      <div class="lg:col-span-6">
+        <div class="rounded-2xl bg-white border border-slate-200/80 p-6 sm:p-8 space-y-6 shadow-sm">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Hizmet Standartlarımız:
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <div class="text-2xl sm:text-3xl font-extrabold text-amber-600 font-display tabular-nums">
+                1 Saat
+              </div>
+              <div class="text-xs text-slate-600 mt-1 font-medium">
+                Ortalama Adrese Ulaşım Süresi
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600 font-display tabular-nums">
+                %100
+              </div>
+              <div class="text-xs text-slate-600 mt-1 font-medium">
+                Şeffaf Tartım & Peşin Nakit
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display tabular-nums">
+                Tüm Markalar
+              </div>
+              <div class="text-xs text-slate-600 mt-1 font-medium">
+                2. El Klima & Kombi Alımı
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 font-display tabular-nums">
+                İstanbul + Gebze
+              </div>
+              <div class="text-xs text-slate-600 mt-1 font-medium">
+                Geniş Mobil Araç Filosu
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Emergency Call Box -->
+          <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="text-xs text-slate-500">Doğrudan Hurda Hattı:</div>
+              <div class="text-base sm:text-lg font-bold text-slate-900">{company.phone}</div>
+            </div>
+
+            <div class="flex items-center gap-2.5 w-full sm:w-auto">
+              <a
+                href={callUrl}
+                class="flex-1 sm:flex-initial inline-flex items-center justify-center px-4.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-xs transition-all"
+              >
+                Hemen Ara
+              </a>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 sm:flex-initial inline-flex items-center justify-center px-4.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-xs transition-all"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

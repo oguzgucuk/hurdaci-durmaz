@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import company from '../data_files/company.json';
+
+const title = "Hakkımızda — Hurdacı Durmaz Metal | Kurumsal Geri Dönüşüm";
+const description = "Hurdacı Durmaz Metal hakkında bilgiler, dürüstlük ve hassas tartım ilkelerimiz, hizmet araç filomuz ve geri dönüşüm misyonumuz.";
+---
+
+<MainLayout title={title} description={description}>
+  <!-- Header -->
+  <section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold tracking-wide">
+          <span>FİRMA PROFİLİ & İLKELERİMİZ</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-display tracking-tight">
+          Hurdacı Durmaz Metal Hakkında
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          {company.legalName}, geri dönüşüm sektöründe dürüst ticaret, şeffaf elektronik kantar tartımı ve kapıda anında peşin nakit ödeme prensipleriyle hizmet veren köklü bir kuruluştur.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Values -->
+  <section class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
+          Biz Kimiz?
+        </h2>
+        <p>
+          Hurdacı Durmaz Metal olarak, sanayi metallerinin (bakır, sarı pirinç, demir, alüminyum, paslanmaz krom, çinko) ve ömrünü tamamlamış veya 2. el klima ve kombi cihazlarının ülke ekonomisine geri kazandırılmasını sağlıyoruz. Hurdacılık mesleğinin en temel unsuru olan "güven" ve "dürüstlük" prensiplerini modern mobil araç filomuzla birleştiriyoruz.
+        </p>
+        <p>
+          Müşterilerimizin tartıda gram dahi şüphe yaşamaması için Sanayi ve Teknoloji Bakanlığı periyodik muayenesinden geçmiş dijital kantar ve terazi sistemleri kullanıyoruz. Müşterimizin gözünün önünde yapılan tartım neticesinde, resmi kantar fişi ile beraber ödemeyi tartım tamamlandığı saniye elden peşin nakit veya anında FAST transferiyle gerçekleştiriyoruz.
+        </p>
+      </div>
+
+      <!-- 3 Core Principles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 hover:border-amber-400/60 hover:bg-white hover:shadow-md transition-all">
+          <div class="text-2xl text-amber-600 font-extrabold font-display">01.</div>
+          <h3 class="text-lg font-bold text-slate-900 font-display">Şeffaf Tartım</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tartıda eksik veya yanıltıcı ölçüm asla kabul edilemez. Terazimiz daima kalibre ve müşterimizin gözü önündedir.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 hover:border-orange-400/60 hover:bg-white hover:shadow-md transition-all">
+          <div class="text-2xl text-orange-600 font-extrabold font-display">02.</div>
+          <h3 class="text-lg font-bold text-slate-900 font-display">Anında Peşin Nakit</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Malı alıp parayı sonra ödeme uygulaması yoktur. Tartım bittiği an paranız elinizde veya hesabınızdadır.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 hover:border-emerald-500/60 hover:bg-white hover:shadow-md transition-all">
+          <div class="text-2xl text-emerald-600 font-extrabold font-display">03.</div>
+          <h3 class="text-lg font-bold text-slate-900 font-display">Hızlı Mobil Servis</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            İstanbul genelinde ve Gebze'de geniş araç ağımızla aramanızdan itibaren ortalama 1 saat içinde kapınızdayız.
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Banner -->
+      <div class="p-8 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
+        <div class="space-y-1 text-center sm:text-left">
+          <div class="text-lg font-bold text-white font-display">Hurdalarınızı Hemen Değerlendirin</div>
+          <div class="text-xs text-slate-400">WhatsApp'tan fotoğraf gönderin, 5 dakikada en iyi teklifi verelim.</div>
+        </div>
+        <a
+          href={`https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.defaultWhatsAppMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm whitespace-nowrap shadow-sm transition-all"
+        >
+          WhatsApp Teklif Al
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

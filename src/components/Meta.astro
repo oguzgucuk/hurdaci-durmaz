@@ -1,0 +1,89 @@
+---
+import company from '../data_files/company.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = `${company.companyName} — ${company.slogan}`,
+  description = company.description,
+  image = "/images/og-image.jpg",
+  canonicalUrl = Astro.url.href,
+} = Astro.props;
+
+const siteName = company.companyName;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "RecyclingCenter",
+  "name": company.companyName,
+  "legalName": company.legalName,
+  "description": company.description,
+  "image": "https://durmazmetal.com/images/og-image.jpg",
+  "telephone": company.phone,
+  "url": "https://durmazmetal.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": company.address.street,
+    "addressLocality": company.address.district,
+    "addressRegion": company.address.city,
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.025,
+    "longitude": 28.875
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:30",
+      "closes": "20:00"
+    }
+  ],
+  "priceRange": "₺₺",
+  "paymentAccepted": "Nakit, Banka Havalesi",
+  "currenciesAccepted": "TRY",
+  "areaServed": company.serviceAreas
+};
+---
+
+<!-- Essential Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta name="theme-color" content="#0B0F19" />
+
+<!-- Favicon & Manifest -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:site_name" content={siteName} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={image} />
+
+<!-- Google Fonts (Plus Jakarta Sans & Inter) Preconnect for Fast LCP -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Schema.org JSON-LD Structured Data for Local SEO & Recycling Center -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,159 @@
+---
+import company from '../data_files/company.json';
+
+const currentYear = new Date().getFullYear();
+const callUrl = `tel:${company.phoneRaw}`;
+const waUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.defaultWhatsAppMessage)}`;
+---
+
+<footer class="bg-slate-950 text-slate-400 border-t border-slate-900 pt-16 pb-24 md:pb-12 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Top Row: Big Statement & Quick Call Banner -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10 items-center">
+      <div class="lg:col-span-7 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          Yerinde Değerinde Nakit Alım
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
+          Metalleriniz ve 2. El Cihazlarınız <span class="text-amber-400">Anında Nakite</span> Dönüşsün
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl leading-relaxed">
+          Hurdanızın veya klimanızın fotoğrafını WhatsApp'tan gönderin; ustalarımız 5 dakika içinde güncel borsa değerinden en iyi fiyatı versin.
+        </p>
+      </div>
+
+      <div class="lg:col-span-5 flex flex-col sm:flex-row gap-3 lg:justify-end">
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
+        >
+          <svg class="w-4.5 h-4.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+          </svg>
+          <span>WhatsApp Fiyat Hattı</span>
+        </a>
+
+        <a
+          href={callUrl}
+          class="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-md transition-all"
+        >
+          <svg class="w-4.5 h-4.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>Hemen Ara: {company.phone}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Navigation Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-12">
+      <!-- Col 1: About & Trust -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-slate-900 border border-white/20 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-amber-400" viewBox="0 0 48 48" fill="none">
+              <path d="M24 6V16M24 16C18.4772 16 14 20.4772 14 26C14 31.5228 18.4772 36 24 36C27.3137 36 30.25 34.39 32.08 31.89" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="24" cy="10" r="3" fill="currentColor"/>
+              <rect x="28" y="24" width="12" height="6" rx="2" fill="#ea580c"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-extrabold text-base sm:text-lg text-white font-display leading-tight">
+              HURDACI <span class="text-amber-400">DURMAZ</span> METAL
+            </div>
+            <div class="text-xs text-slate-500 font-medium">
+              {company.legalName}
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm leading-relaxed text-slate-400">
+          {company.description}
+        </p>
+
+        <!-- Service Area Badges -->
+        <div class="space-y-1.5 pt-2">
+          <div class="text-xs font-semibold text-slate-400 tracking-wide">Hizmet Bölgeleri:</div>
+          <div class="flex flex-wrap gap-1.5">
+            {company.serviceAreas.map((area) => (
+              <span class="px-2 py-0.5 rounded-md bg-slate-900 border border-white/10 text-xs text-slate-300">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2: Hurda Çeşitleri -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider">Hurda Çeşitleri</h3>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="/hurda-cesitleri/bakir-ve-kablo-hurdasi" class="hover:text-amber-400 transition-colors">Hurda Bakır & Kablo</a></li>
+          <li><a href="/hurda-cesitleri/sari-pirinc-hurdasi" class="hover:text-amber-400 transition-colors">Sarı (Pirinç) Hurdası</a></li>
+          <li><a href="/hurda-cesitleri/demir-ve-celik-hurdasi" class="hover:text-amber-400 transition-colors">Demir & Çelik Hurdası</a></li>
+          <li><a href="/hurda-cesitleri/aluminyum-hurdasi" class="hover:text-amber-400 transition-colors">Alüminyum Profil & Jant</a></li>
+          <li><a href="/hurda-cesitleri/paslanmaz-krom-hurdasi" class="hover:text-amber-400 transition-colors">Paslanmaz (Krom)</a></li>
+          <li><a href="/hurda-cesitleri/cinko-hurdasi" class="hover:text-amber-400 transition-colors">Çinko & Kurşun Hurdası</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Kurumsal & Hizmetler -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider">Hizmetlerimiz</h3>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li>
+            <a href="/ikinci-el-klima-kombi" class="text-orange-400 font-semibold hover:underline flex items-center gap-1">
+              <span>2. El Klima & Kombi</span>
+              <span class="text-[9px] uppercase px-1 py-0.5 bg-orange-500/20 text-orange-300 border border-orange-500/30 rounded">Özel</span>
+            </a>
+          </li>
+          <li><a href="/hizmetler/adresten-hurda-alimi" class="hover:text-amber-400 transition-colors">Adresten Hurda Alımı</a></li>
+          <li><a href="/hizmetler/kentsel-donusum-ve-bina-yikimi" class="hover:text-amber-400 transition-colors">Bina Yıkımı & Çatı Sökümü</a></li>
+          <li><a href="/hizmetler/endustriyel-makine-ve-ekipman-alimi" class="hover:text-amber-400 transition-colors">Endüstriyel Makine Alımı</a></li>
+          <li><a href="/hakkimizda" class="hover:text-amber-400 transition-colors">Hakkımızda</a></li>
+          <li><a href="/iletisim" class="hover:text-amber-400 transition-colors">İletişim & Konum</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: İletişim & Çalışma Saatleri -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider">Doğrudan İletişim</h3>
+        <div class="space-y-2.5 text-xs">
+          <div>
+            <div class="text-slate-500">Telefon:</div>
+            <a href={callUrl} class="text-sm font-bold text-amber-400 hover:underline">{company.phone}</a>
+          </div>
+          <div>
+            <div class="text-slate-500">WhatsApp:</div>
+            <a href={waUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-emerald-400 hover:underline">{company.phone}</a>
+          </div>
+          <div>
+            <div class="text-slate-500">Adres:</div>
+            <div class="text-slate-300">{company.address.street}, {company.address.district} / {company.address.city}</div>
+          </div>
+          <div>
+            <div class="text-slate-500">Çalışma Saatleri:</div>
+            <div class="text-slate-200 font-medium">{company.workingHours.weekdays}</div>
+            <div class="text-amber-400 font-semibold">{company.workingHours.sunday}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        © {currentYear} {company.companyName}. Tüm hakları saklıdır.
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Geri Dönüşüm Lisanslı Saha</span>
+        <span>•</span>
+        <span>Hassas Elektronik Kantar Güvencesi</span>
+      </div>
+    </div>
+  </div>
+</footer>

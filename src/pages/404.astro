@@ -1,0 +1,34 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import company from '../data_files/company.json';
+
+const title = "Sayfa Bulunamadı (404) — Hurdacı Durmaz Metal";
+const description = "Aradığınız sayfa bulunamadı. Hurdacı Durmaz Metal ana sayfasına dönebilir veya hemen telefonla bize ulaşabilirsiniz.";
+---
+
+<MainLayout title={title} description={description}>
+  <section class="py-24 lg:py-32 bg-[var(--color-paper)] text-center">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 space-y-6">
+      <div class="font-mono text-6xl sm:text-7xl font-black text-[var(--color-accent)] tabular-nums">
+        404
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-bold text-[var(--color-ink)] font-display uppercase tracking-tight">
+        Aradığınız Sayfa Bulunamadı
+      </h1>
+
+      <p class="text-sm text-[var(--color-ink-muted)]">
+        Ulaşmaya çalıştığınız sayfa taşınmış veya silinmiş olabilir. Ana sayfaya dönebilir veya doğrudan arayarak bilgi alabilirsiniz.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row justify-center gap-3">
+        <a href="/" class="px-6 py-3 rounded-lg btn-amber font-bold text-sm">
+          Ana Sayfaya Dön
+        </a>
+        <a href={`tel:${company.phoneRaw}`} class="px-6 py-3 rounded-lg btn-outline font-bold text-sm">
+          Telefon Et: {company.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

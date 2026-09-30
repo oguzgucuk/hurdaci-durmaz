@@ -1,0 +1,237 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import company from '../data_files/company.json';
+import { FastQuoteModal } from '../components/ui/FastQuoteModal';
+
+const callUrl = `tel:${company.phoneRaw}`;
+const waKlimaUrl = `https://wa.me/${company.whatsappRaw}?text=${encodeURIComponent(company.klimaWhatsAppMessage)}`;
+
+const title = "2. El ve Hurda Klima & Kombi Alanlar — Adresten Değerinde Nakit Alım | Durmaz Metal";
+const description = "Eski, arızalı veya çalışan 2. el split, salon ve kaset tipi klimalarınız ile kombilerinizi adresinizden söküp anında nakit alıyoruz. Fotoğraf atın, 5 dk'da teklif alın.";
+
+const acBrands = [
+  'Daikin', 'Mitsubishi Electric', 'Mitsubishi Heavy', 'Arçelik', 'Vestel', 'Bosch',
+  'Carrier', 'Toshiba', 'LG', 'Samsung', 'Alarko', 'DemirDöküm', 'Baymak', 'ECA', 'Buderus', 'Vaillant'
+];
+
+const acTypes = [
+  {
+    name: 'Ev Tipi Split Klimalar',
+    specs: '9.000 - 24.000 BTU',
+    desc: 'İç ve dış ünite komple sökülür. Çalışır durumdaki cihazlara ekstra 2. el değeri, arızalılara yüksek hurda bakır değeri ödenir.',
+  },
+  {
+    name: 'Salon Tipi Klimalar',
+    specs: '24.000 - 48.000 BTU',
+    desc: 'Restoran, kafe, mağaza ve iş yerlerindeki büyük hacimli salon tipi cihazlar yerinden taşınarak nakit alınır.',
+  },
+  {
+    name: 'Kaset Tipi Tavan Klimaları',
+    specs: 'Merkezi & Asma Tavan',
+    desc: 'Ofis ve plazalarda asma tavana gömülü kaset tipi cihazlar tavana zarar verilmeden uzman personelimizce indirilir.',
+  },
+  {
+    name: 'Kombiler & Şofbenler',
+    specs: 'Hermetik & Yoğuşmalı',
+    desc: 'Dönüşüm veya tadilat sonrası boşa çıkan tüm marka doğalgaz kombileri su ve gaz bağlantıları emniyetle sökülerek satın alınır.',
+  },
+];
+---
+
+<MainLayout title={title} description={description} customWhatsAppMessage={company.klimaWhatsAppMessage}>
+  <!-- Dedicated Landing Page Hero -->
+  <section class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Tagline -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-900 border border-orange-200 text-xs font-bold tracking-wide mb-6">
+        <span>ÖZEL VİTRİN HİZMETİ • İSTANBUL & GEBZE GENELİ ADRESTEN SÖKÜM</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-display tracking-tight leading-tight">
+            2. El ve Hurda <br />
+            <span class="text-orange-600">Klima & Kombilerinizi</span> <br />
+            Kapınızdan Değerinde Nakit Alıyoruz
+          </h1>
+
+          <p class="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl">
+            Eski, arızalı veya yenisiyle değiştirdiğiniz klimalarınızı ve kombilerinizi değerinin altında vermeyin. 
+            <strong class="text-slate-900 font-semibold">Adresinizden gazını toplayarak hasarsız söküyor</strong>, çalışma durumuna göre 
+            <strong class="text-emerald-700 font-semibold">anında peşin nakit</strong> ödüyoruz.
+          </p>
+
+          <!-- Action buttons -->
+          <div class="pt-2 flex flex-col sm:flex-row gap-3.5 items-stretch sm:items-center">
+            <a
+              href={waKlimaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all whitespace-nowrap"
+            >
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.89 8 8.49 8 9.72C8 10.95 8.89 12.14 9.01 12.31C9.14 12.47 10.77 14.97 13.25 16.05C13.84 16.31 14.3 16.46 14.66 16.58C15.26 16.77 15.8 16.74 16.24 16.68C16.73 16.61 17.74 16.07 17.95 15.48C18.16 14.89 18.16 14.38 18.1 14.28C18.04 14.18 17.88 14.12 17.64 14C17.4 13.88 16.21 13.3 15.99 13.22C15.77 13.14 15.61 13.1 15.45 13.34C15.29 13.59 14.83 14.12 14.69 14.28C14.55 14.44 14.41 14.47 14.17 14.35C13.93 14.23 12.92 13.89 11.72 12.82C10.79 11.99 10.16 10.96 10.04 10.76C9.92 10.56 10.03 10.45 10.15 10.33C10.26 10.22 10.4 10.04 10.52 9.9C10.64 9.76 10.68 9.66 10.76 9.5C10.84 9.34 10.8 9.2 10.74 9.08C10.68 8.96 10.22 7.83 10.03 7.37C9.84 6.92 9.65 6.98 9.53 7.34Z"/>
+              </svg>
+              <span>Klima / Kombi Fotoğrafı Gönder</span>
+            </a>
+
+            <a
+              href={callUrl}
+              class="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-xs transition-all whitespace-nowrap"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>Ustayla Konuş: {company.phone}</span>
+            </a>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-4 text-xs font-medium text-slate-600">
+            <span class="flex items-center gap-1.5">
+              <span class="text-amber-500 font-bold">✓</span> Söküm Ücreti Alınmaz
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="text-amber-500 font-bold">✓</span> Gaz Kaçağı Önlemi
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="text-amber-500 font-bold">✓</span> Yerinde Elden Peşin
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-white border border-slate-200/80 p-6 sm:p-7 space-y-4 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span class="text-xs text-orange-600 font-bold uppercase tracking-wider">
+                DEĞERLENDİRME KRİTERLERİ
+              </span>
+              <span class="text-xs text-slate-500 font-medium">
+                Şeffaf Ekspertiz
+              </span>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                <div class="font-bold text-slate-900 text-sm">1. Çalışır Durumdaki Cihazlar</div>
+                <div class="text-slate-600 leading-relaxed">Elektronik kartı, gazı ve kompresörü sağlam çalışan klimalar 2. el piyasa değerinden en yüksek teklifle alınır.</div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                <div class="font-bold text-slate-900 text-sm">2. Arızalı & Yanık Klimalar</div>
+                <div class="text-slate-600 leading-relaxed">Kompresörü yanmış veya gazı kaçmış hurda klimalar içerdikleri bakır boru ve radyatör ağırlığına göre tartılır.</div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                <div class="font-bold text-slate-900 text-sm">3. Toplu Otel & Plaza Klimaları</div>
+                <div class="text-slate-600 leading-relaxed">Toplu alımlarda özel nakit fiyat ve aynı gün komple tahliye garantisi verilir.</div>
+              </div>
+            </div>
+
+            <div class="pt-2 text-center">
+              <div class="text-xs text-slate-500">Cihazınızın fotoğrafını çekip atın:</div>
+              <a href={waKlimaUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-emerald-700 hover:underline">
+                WhatsApp: {company.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AC Types Grid -->
+  <section class="py-16 sm:py-20 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 pb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">
+          Alımını Yaptığımız <span class="text-orange-600">Klima & Kombi Türleri</span>
+        </h2>
+        <p class="text-sm text-slate-600">
+          Evsel ve ticari her kapasitedeki cihazlarınızı söküm dahil adresinizden teslim alıyoruz.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {acTypes.map((type) => (
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 hover:bg-white hover:border-orange-300 hover:shadow-md transition-all">
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-orange-100 text-orange-800 border border-orange-200">
+              {type.specs}
+            </span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 font-display">{type.name}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{type.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands List -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-2 pb-8">
+        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          Tüm Markalar Değerlendirilir
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-display">
+          Alımını Yaptığımız Başlıca Markalar
+        </h3>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
+        {acBrands.map((brand) => (
+          <div class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-800 shadow-2xs">
+            {brand}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section for AC -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      <div class="text-center space-y-2 pb-6">
+        <h3 class="text-2xl font-bold text-slate-900 font-display">Klima & Kombi Alımı S.S.S.</h3>
+        <p class="text-xs text-slate-500">Aklınıza takılan sorular</p>
+      </div>
+
+      <div class="space-y-3">
+        <details class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 group">
+          <summary class="font-bold text-sm text-slate-900 cursor-pointer flex justify-between items-center">
+            <span>Söküm için ayrıca ücret ödüyor muyum?</span>
+            <span class="text-orange-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="pt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/70 mt-3 leading-relaxed">
+            Kesinlikle hayır! Söküm ekibimiz adresinize gelir, klimanızı veya kombinizi ücretsiz söker ve cihazın piyasa değerini size nakit olarak öder.
+          </div>
+        </details>
+
+        <details class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 group">
+          <summary class="font-bold text-sm text-slate-900 cursor-pointer flex justify-between items-center">
+            <span>Bozuk veya gazı kaçmış klima alır mısınız?</span>
+            <span class="text-orange-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="pt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/70 mt-3 leading-relaxed">
+            Evet, çalışmayan klimalar da içerdikleri bakır borular, kompresör motoru ve alüminyum petekleri nedeniyle değerlidir. Hurda değerinden anında nakit ödeme yapılır.
+          </div>
+        </details>
+      </div>
+
+      <!-- Bottom Fast CTA -->
+      <div class="text-center pt-8">
+        <a
+          href={waKlimaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
+        >
+          <span>WhatsApp'tan Fotoğraf Atın, Fiyat Verelim</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
