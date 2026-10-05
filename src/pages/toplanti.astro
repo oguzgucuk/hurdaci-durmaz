@@ -1,5 +1,6 @@
 ---
 // src/pages/toplanti.astro - Hurdacı Durmaz Metal Toplantı & Müşteri Brifing Portalı
+import '../assets/styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -12,12 +13,77 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <style>
+  
+  <style is:inline>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 0;
     }
     h1, h2, h3, h4, .font-display {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    /* Strictly enforce icon sizing under any browser condition */
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    svg.icon-sm, .icon-sm, svg.w-4 {
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      max-width: 16px !important;
+      min-height: 16px !important;
+      max-height: 16px !important;
+    }
+    svg.icon-md, .icon-md, svg.w-5 {
+      width: 20px !important;
+      height: 20px !important;
+    }
+    .check-bullet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      background-color: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cross-bullet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      background-color: rgba(100, 116, 139, 0.2);
+      color: #64748b;
+      font-size: 11px;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .star-bullet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 9999px;
+      background-color: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      font-size: 11px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
     @media print {
       .no-print {
@@ -27,20 +93,17 @@
         background: white !important;
         color: black !important;
       }
-      .page-break {
-        page-break-before: always;
-      }
     }
   </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
 
   <!-- TOP BAR & STATUS -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+  <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
       
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-amber-500/20">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-amber-500/20 shrink-0">
           D
         </div>
         <div>
@@ -56,8 +119,8 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-2.5 no-print">
-        <span id="saveIndicator" class="text-xs text-emerald-400 flex items-center gap-1.5 opacity-0 transition-opacity duration-300">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span id="saveIndicator" class="text-xs text-emerald-400 flex items-center gap-1.5 opacity-0 transition-opacity duration-300 font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           Otomatik Kaydedildi
         </span>
 
@@ -66,7 +129,7 @@
           class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer"
           title="Tüm notları metin olarak panoya kopyala"
         >
-          <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+          <svg class="icon-sm text-amber-400" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
           <span>Notları Kopyala</span>
         </button>
 
@@ -75,7 +138,7 @@
           class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer"
           title="Notları metin dosyası olarak bilgisayara indir"
         >
-          <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+          <svg class="icon-sm text-emerald-400" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
           <span>Metin İndir</span>
         </button>
 
@@ -83,7 +146,7 @@
           onclick="window.print()" 
           class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-all flex items-center gap-1.5 shadow-md shadow-amber-500/10 cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
+          <svg class="icon-sm" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
           <span>Yazdır / PDF</span>
         </button>
       </div>
@@ -95,21 +158,19 @@
 
     <!-- BÖLÜM 1: FİYAT VE SEÇENEKLER VİTRİNİ -->
     <section>
-      <div class="flex items-center justify-between mb-6">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">1. AŞAMA</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Fiyat & Yatırım Paketleri
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">Müşterinin ihtiyaç ve bütçesine göre sunulacak 3 net alternatif.</p>
-        </div>
+      <div class="mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">1. AŞAMA</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Fiyat & Yatırım Paketleri
+        </h2>
+        <p class="text-sm text-slate-400 mt-1">Müşterinin ihtiyaç ve bütçesine göre sunulacak 3 net alternatif.</p>
       </div>
 
       <!-- 3 Paket Kartı -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- PAKET 1: Sadece Web Sitesi -->
-        <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-6 flex flex-col justify-between hover:border-slate-600 transition-all">
+        <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-6 flex flex-col justify-between hover:border-slate-600 transition-all shadow-sm">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-700 text-slate-300">
@@ -128,25 +189,25 @@
               <div class="text-[11px] text-slate-400 mt-1">15.000 ₺ Yazılım + 2.500 ₺ Domain/Altyapı</div>
             </div>
 
-            <ul class="space-y-2 text-xs text-slate-300 pt-2">
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <ul class="space-y-2.5 text-xs text-slate-300 pt-2">
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet">✓</span>
                 <span>Astro 5 Altyapısı (0.3 sn Açılış)</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet">✓</span>
                 <span>2. El Klima/Kombi Landing Page</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet">✓</span>
                 <span>Domain, SSL ve Bulut Kurulumu</span>
               </li>
-              <li class="flex items-center gap-2 text-slate-500">
-                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              <li class="flex items-start gap-2.5 text-slate-500">
+                <span class="cross-bullet">✕</span>
                 <span>Google Ads Reklam Kurulumu Yok</span>
               </li>
-              <li class="flex items-center gap-2 text-slate-500">
-                <svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              <li class="flex items-start gap-2.5 text-slate-500">
+                <span class="cross-bullet">✕</span>
                 <span>İlçe SEO & Sıralama Çalışması Yok</span>
               </li>
             </ul>
@@ -154,7 +215,7 @@
         </div>
 
         <!-- PAKET 2: Bölge Lideri (Tavsiye Edilen) -->
-        <div class="rounded-2xl bg-gradient-to-b from-slate-800 to-slate-850 border-2 border-amber-500 p-6 flex flex-col justify-between relative shadow-xl shadow-amber-500/10 scale-102">
+        <div class="rounded-2xl bg-gradient-to-b from-slate-800 to-slate-850 border-2 border-amber-500 p-6 flex flex-col justify-between relative shadow-xl shadow-amber-500/10 md:scale-102">
           <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-xs font-black tracking-wide uppercase shadow">
             ⭐ EN ÇOK TAVSİYE EDİLEN
           </div>
@@ -164,7 +225,7 @@
               <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30">
                 Anahtar Teslim Büyüme
               </span>
-              <span class="text-xs text-amber-400/90 font-medium">Lansman Paketi</span>
+              <span class="text-xs text-amber-400 font-medium">Lansman Paketi</span>
             </div>
             
             <h3 class="text-xl font-bold text-white">Bölge Lideri & Reklam</h3>
@@ -182,25 +243,25 @@
               </div>
             </div>
 
-            <ul class="space-y-2 text-xs text-slate-200 pt-2">
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <ul class="space-y-2.5 text-xs text-slate-200 pt-2">
+              <li class="flex items-start gap-2.5">
+                <span class="star-bullet">★</span>
                 <span><strong>Web Sitesi</strong> + Domain & Hosting Hediyesi</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="star-bullet">★</span>
                 <span><strong>8 İlçe Yerel SEO:</strong> İkitelli, Gebze, Ümraniye vb.</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="star-bullet">★</span>
                 <span><strong>Google Ads Kurulumu:</strong> 150+ Negatif Kelime</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="star-bullet">★</span>
                 <span><strong>Dönüşüm Takibi:</strong> WhatsApp & Arama Sayacı</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="star-bullet">★</span>
                 <span><strong>İlk Ay Reklam & Bütçe Yönetimi Dahil</strong></span>
               </li>
             </ul>
@@ -208,7 +269,7 @@
         </div>
 
         <!-- PAKET 3: Agresif İstanbul Hakimiyeti -->
-        <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-6 flex flex-col justify-between hover:border-slate-600 transition-all">
+        <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-6 flex flex-col justify-between hover:border-slate-600 transition-all shadow-sm">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">
@@ -227,21 +288,21 @@
               <div class="text-[11px] text-purple-400 font-semibold mt-1">+ Aylık 8.500 ₺ (Tam Dijital Yönetim)</div>
             </div>
 
-            <ul class="space-y-2 text-xs text-slate-300 pt-2">
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-purple-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <ul class="space-y-2.5 text-xs text-slate-300 pt-2">
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet" style="color: #c084fc; background: rgba(192, 132, 252, 0.15)">✓</span>
                 <span>Bölge Lideri Paketindeki Her Şey</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-purple-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet" style="color: #c084fc; background: rgba(192, 132, 252, 0.15)">✓</span>
                 <span>Tüm İstanbul OSB'lerine 20+ Özel Sayfa</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-purple-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet" style="color: #c084fc; background: rgba(192, 132, 252, 0.15)">✓</span>
                 <span>Google Business (Harita) Sıralama Yönetimi</span>
               </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-purple-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <li class="flex items-start gap-2.5">
+                <span class="check-bullet" style="color: #c084fc; background: rgba(192, 132, 252, 0.15)">✓</span>
                 <span>Haftalık Borsa Endeksli Fiyat Güncellemesi</span>
               </li>
             </ul>
@@ -264,43 +325,43 @@
       </div>
 
       <!-- Kategori 1: Saha & Lojistik -->
-      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4">
+      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4 shadow-sm">
         <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2 border-b border-slate-700/80 pb-3">
           <span>🚛 1. Saha & Lojistik Operasyonu</span>
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Soru 1 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_adrese_gitme" class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_adrese_gitme" class="mt-0.5 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Adrese gitmek için minimum sınır/kural var mı?</span>
             </label>
             <input type="text" id="n_adrese_gitme" placeholder="Örn: 1 klima için bile gidilir / Demire min 100 kg" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
           </div>
 
           <!-- Soru 2 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_kantar_tipi" class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_kantar_tipi" class="mt-0.5 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Seyyar elektronik kantar/terazi araçta bulunuyor mu?</span>
             </label>
             <input type="text" id="n_kantar_tipi" placeholder="Örn: 150 kg seyyar kantar var, tonajlıda resmi kantara çekiliyor" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
           </div>
 
           <!-- Soru 3 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_arac_filosu" class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_arac_filosu" class="mt-0.5 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Araç filosu tipi ve kapasitesi nedir?</span>
             </label>
             <input type="text" id="n_arac_filosu" placeholder="Örn: 2 panelvan kamyonet, 1 açık kasa, vinç anlaşması var" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
           </div>
 
           <!-- Soru 4 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_sokum_ekibi" class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_sokum_ekibi" class="mt-0.5 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Söküm ekibi & alet edevat var mı? (Klima gazı, kaynak)</span>
             </label>
             <input type="text" id="n_sokum_ekibi" placeholder="Örn: Klimayı duvardan ustamız hasarsız söküyor, gazını topluyor" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
@@ -309,34 +370,34 @@
       </div>
 
       <!-- Kategori 2: İletişim & Teklif Verme Kanalları -->
-      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4">
+      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4 shadow-sm">
         <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2 border-b border-slate-700/80 pb-3">
           <span>📱 2. İletişim & Teklif Verme Kanalları</span>
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Soru 5 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_goruntulu_fiyat" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_goruntulu_fiyat" class="mt-0.5 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">WhatsApp'tan görüntülü aramayla canlı fiyat verilecek mi?</span>
             </label>
             <input type="text" id="n_goruntulu_fiyat" placeholder="Örn: Evet, müşteri kamerayı açınca anında fiyat söyleyebiliriz" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <!-- Soru 6 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_calisma_saatleri" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_calisma_saatleri" class="mt-0.5 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Çalışma saatleri ve acil adresten alım günleri?</span>
             </label>
             <input type="text" id="n_calisma_saatleri" placeholder="Örn: 7/24 telefon açık, pazar günü randevulu adrese gidilir" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <!-- Soru 7 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2 md:col-span-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2 md:col-span-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_telefon_hatlari" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_telefon_hatlari" class="mt-0.5 w-4 h-4 rounded text-emerald-500 focus:ring-emerald-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Kullanılacak kesin telefon ve WhatsApp numaraları:</span>
             </label>
             <input type="text" id="n_telefon_hatlari" placeholder="Örn: 0541 623 88 81 (WhatsApp & Arama bir arada) + Usta 2: 05xx..." class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
@@ -345,43 +406,43 @@
       </div>
 
       <!-- Kategori 3: Medya & Fotoğraf/Video Arşivi -->
-      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4">
+      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4 shadow-sm">
         <h3 class="text-lg font-bold text-sky-400 flex items-center gap-2 border-b border-slate-700/80 pb-3">
           <span>📸 3. Fotoğraf & Video Arşivi (Müşteriden İstenecekler)</span>
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Soru 8 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_dukkan_foto" class="mt-1 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_dukkan_foto" class="mt-0.5 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Dükkan, tabela ve kantar alanı fotoğrafı</span>
             </label>
             <input type="text" id="n_dukkan_foto" placeholder="Örn: WhatsApp'tan 3 adet tabela ve kantar fotoğrafı atacak" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500" />
           </div>
 
           <!-- Soru 9 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_kamyon_foto" class="mt-1 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_kamyon_foto" class="mt-0.5 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Kamyonet ve hurda yükleme anı fotoğrafları</span>
             </label>
             <input type="text" id="n_kamyon_foto" placeholder="Örn: Araç arkasında klima ve bakır yüklü 2 kare mevcut" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500" />
           </div>
 
           <!-- Soru 10 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_kisa_video" class="mt-1 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_kisa_video" class="mt-0.5 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">10-15 saniyelik doğal kantar tartım/ödeme videosu</span>
             </label>
             <input type="text" id="n_kisa_video" placeholder="Örn: Yarın ilk adreste usta çekecek, WhatsApp'tan iletecek" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500" />
           </div>
 
           <!-- Soru 11 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_gecmis_referans" class="mt-1 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_gecmis_referans" class="mt-0.5 w-4 h-4 rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Geçmiş referans fabrika veya yıkım işleri isimleri</span>
             </label>
             <input type="text" id="n_gecmis_referans" placeholder="Örn: İkitelli'de tekstil fabrikası sökümü, Kartal çatı yıkımı" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500" />
@@ -390,43 +451,43 @@
       </div>
 
       <!-- Kategori 4: Ödeme & Hizmet Kapsamı -->
-      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4">
+      <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-4 shadow-sm">
         <h3 class="text-lg font-bold text-orange-400 flex items-center gap-2 border-b border-slate-700/80 pb-3">
           <span>💵 4. Ödeme, Fatura & Hurda Kapsamı</span>
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Soru 12 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_odeme_sekli" class="mt-1 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_odeme_sekli" class="mt-0.5 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Ödeme kapıda anında nasıl yapılıyor?</span>
             </label>
             <input type="text" id="n_odeme_sekli" placeholder="Örn: Elden peşin nakit ve anında FAST IBAN transferi" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500" />
           </div>
 
           <!-- Soru 13 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_klima_ikinci_el" class="mt-1 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_klima_ikinci_el" class="mt-0.5 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Klimalar çalışır durumdaysa 2. el değeri ödeniyor mu?</span>
             </label>
             <input type="text" id="n_klima_ikinci_el" placeholder="Örn: Evet, çalışan Daikin/Mitsubishi gibi cihazlara ekstra para verilir" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500" />
           </div>
 
           <!-- Soru 14 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_fatura_gider_pusulasi" class="mt-1 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_fatura_gider_pusulasi" class="mt-0.5 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Resmi fatura / hurda gider pusulası düzenleniyor mu?</span>
             </label>
             <input type="text" id="n_fatura_gider_pusulasi" placeholder="Örn: Fabrikalara tevkifatlı fatura ve kantar fişi verilebiliyor" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500" />
           </div>
 
           <!-- Soru 15 -->
-          <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" id="q_alinmayan_hurda" class="mt-1 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600" />
+              <input type="checkbox" id="q_alinmayan_hurda" class="mt-0.5 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 bg-slate-800 border-slate-600 shrink-0" />
               <span class="text-xs font-semibold text-slate-200">Kesinlikle ALINMAYAN hurdalar (Reklam negatifleri):</span>
             </label>
             <input type="text" id="n_alinmayan_hurda" placeholder="Örn: Kağıt, plastik, cam, moloz alınmaz. Sadece metal & klima" class="w-full text-xs px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500" />
@@ -450,7 +511,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         <!-- Sol Not Defteri -->
-        <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-3">
+        <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-3 shadow-sm">
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">
             ✍️ Müşterinin Sitede Özellikle İstediği Şeyler / Revizeler:
           </label>
@@ -463,7 +524,7 @@
         </div>
 
         <!-- Sağ Karar Defteri -->
-        <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-3">
+        <div class="rounded-2xl bg-slate-800/40 border border-slate-700 p-6 space-y-3 shadow-sm">
           <label class="block text-xs font-bold uppercase tracking-wider text-amber-400">
             🤝 Toplantı Sonucu & Varılan Anlaşma (Özet):
           </label>
@@ -471,7 +532,7 @@
             id="meeting_outcome_notes" 
             rows="8" 
             placeholder="Örn:&#10;• Seçilen Paket: Bölge Lideri (25.000 TL Anahtar Teslim)&#10;• Ödeme Planı: 15.000 TL peşin verildi, kalan 10.000 TL yayında verilecek&#10;• Google Ads Bütçesi: Günlük 300 TL kart bağlandı&#10;• Teslim Tarihi: Çarşamba günü tam yayın..."
-            class="w-full text-xs font-mono p-4 rounded-xl bg-slate-900 border border-slate-700 text-amber-200/90 placeholder-slate-600 focus:outline-none focus:border-amber-500 leading-relaxed"
+            class="w-full text-xs font-mono p-4 rounded-xl bg-slate-900 border border-slate-700 text-amber-200 placeholder-slate-600 focus:outline-none focus:border-amber-500 leading-relaxed"
           ></textarea>
         </div>
 
@@ -497,7 +558,6 @@
   <script is:inline>
     const STORAGE_KEY = 'durmaz_metal_meeting_data_v1';
 
-    // All form input and checkbox IDs
     const fieldIds = [
       'q_adrese_gitme', 'n_adrese_gitme',
       'q_kantar_tipi', 'n_kantar_tipi',
@@ -519,7 +579,6 @@
 
     const saveIndicator = document.getElementById('saveIndicator');
 
-    // Show auto-save notification
     function flashSave() {
       if (!saveIndicator) return;
       saveIndicator.style.opacity = '1';
@@ -528,7 +587,6 @@
       }, 1500);
     }
 
-    // Save to localStorage
     function saveData() {
       const data = {};
       fieldIds.forEach(id => {
@@ -544,7 +602,6 @@
       flashSave();
     }
 
-    // Load from localStorage
     function loadData() {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
@@ -564,7 +621,6 @@
       }
     }
 
-    // Attach listeners
     fieldIds.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -572,7 +628,6 @@
       el.addEventListener('change', saveData);
     });
 
-    // Copy formatted report to clipboard
     document.getElementById('copyBtn')?.addEventListener('click', () => {
       const notes = document.getElementById('meeting_custom_notes')?.value || '';
       const outcome = document.getElementById('meeting_outcome_notes')?.value || '';
@@ -601,7 +656,6 @@
       });
     });
 
-    // Download text file
     document.getElementById('downloadBtn')?.addEventListener('click', () => {
       const notes = document.getElementById('meeting_custom_notes')?.value || '';
       const outcome = document.getElementById('meeting_outcome_notes')?.value || '';
@@ -626,7 +680,6 @@
       a.click();
     });
 
-    // Reset button
     document.getElementById('resetBtn')?.addEventListener('click', () => {
       if (confirm('Tüm notları temizlemek istediğinize emin misiniz?')) {
         localStorage.removeItem(STORAGE_KEY);
@@ -640,7 +693,6 @@
       }
     });
 
-    // Initialize on load
     loadData();
   </script>
 
