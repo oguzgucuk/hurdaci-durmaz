@@ -23,25 +23,26 @@ const pageDesc = `${metal.data.title} için en güncel borsa fiyatı üzerinden 
 
 <MainLayout title={pageTitle} description={pageDesc}>
   <!-- Top Breadcrumb & Heading -->
-  <section class="py-12 lg:py-16 bg-[var(--color-paper-2)] border-b border-[var(--color-rule)]">
+  <section class="bg-gradient-to-b from-[#0e3b2e] to-[#134939] text-white py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs font-mono text-[var(--color-ink-faint)] pb-4">
-        <a href="/" class="hover:text-[var(--color-accent)]">Ana Sayfa</a>
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-slate-300 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white">Ana Sayfa</a>
         <span>/</span>
-        <a href="/hurda-cesitleri" class="hover:text-[var(--color-accent)]">Hurda Çeşitleri</a>
+        <a href="/hurda-cesitleri" class="hover:text-white">Hurda Çeşitleri</a>
         <span>/</span>
-        <span class="text-[var(--color-ink)] font-semibold">{metal.data.title}</span>
+        <span class="text-amber-400 font-semibold">{metal.data.title}</span>
       </nav>
 
       <div class="max-w-4xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[var(--color-paper-3)] text-[var(--color-accent)] font-mono text-xs uppercase font-bold tracking-wider">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-emerald-300 text-xs sm:text-sm font-semibold border border-white/15">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>GÜNCEL BORSA FİYATLARIYLA NAKİT ALIM</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--color-ink)] uppercase font-display tracking-tight">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
           {metal.data.title}
         </h1>
-        <p class="text-base sm:text-lg text-[var(--color-ink-muted)] leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed">
           {metal.data.shortDesc}
         </p>
       </div>
