@@ -25,6 +25,13 @@ import '../assets/styles/global.css';
     h1, h2, h3, h4, .font-display {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
+    textarea {
+      color: #0f172a !important;
+    }
+    textarea::placeholder {
+      color: #64748b !important;
+      opacity: 1 !important;
+    }
     svg {
       display: inline-block;
       vertical-align: middle;
@@ -61,7 +68,7 @@ import '../assets/styles/global.css';
       height: 18px;
       border-radius: 9999px;
       background-color: #f1f5f9;
-      color: #94a3b8;
+      color: #64748b;
       border: 1px solid #cbd5e1;
       font-size: 11px;
       font-weight: bold;
@@ -153,124 +160,6 @@ import '../assets/styles/global.css';
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-
-    <!-- 🎯 SANA ÖZEL: TOPLANTI KONUŞMA SIRALAMASI & HATIRLATMA KARTLARI -->
-    <section class="bg-gradient-to-r from-slate-900 to-slate-950 text-white p-6 sm:p-7 rounded-2xl border-2 border-amber-500/80 shadow-xl relative no-print">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-        <div class="flex items-center gap-3">
-          <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-sm">
-            🎯
-          </span>
-          <div>
-            <h2 class="text-lg sm:text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
-              <span>Toplantı Konuşma Rehberi & Hatırlatma Kartları</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                Sana Özel Hızlı Bakış
-              </span>
-            </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Toplantı boyunca takıldığın an göz ucuyla bakacağın altın konuşma adımları</p>
-          </div>
-        </div>
-
-        <button 
-          id="toggleGuideBtn" 
-          type="button"
-          onclick="toggleGuide()"
-          class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition-all cursor-pointer font-medium"
-        >
-          Gizle / Göster
-        </button>
-      </div>
-
-      <!-- 6 Adımlı Hatırlatma Grid -->
-      <div id="guideContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5 transition-all">
-        
-        <!-- Adım 1 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-amber-400 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-[11px]">1</span>
-            <span>Hal-Hatır & Çay (İlk 3-5 Dk)</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            Hemen işe ve paraya girme. Çay söyle, esnafla bağ kur:
-          </p>
-          <div class="text-[11px] font-mono text-amber-200/90 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "Ali Bey işler nasıl? Sanayi tarafı hareketli mi bu aralar?"
-          </div>
-        </div>
-
-        <!-- Adım 2 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-emerald-400 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[11px]">2</span>
-            <span>Göz Doyurma & 94 vs 74 Kıyası</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            Laptopta siteyi aç, F12 mobil yap ve referans darbesini vur:
-          </p>
-          <div class="text-[11px] font-mono text-emerald-200/90 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "Sizin referans site 74 puan aldı (4 sn). Bizimki 94 puan (0.3 sn)! Hızlı site Google Ads'te %40 ucuza tıklar."
-          </div>
-        </div>
-
-        <!-- Adım 3 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-sky-400 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 flex items-center justify-center text-[11px]">3</span>
-            <span>Aşağıdaki 5 Kutuyu Doldur</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            Sayfayı aşağı kaydır, soruları sorup klavyeyle takır takır not al:
-          </p>
-          <div class="text-[11px] font-mono text-sky-200/90 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "Ali Bey dükkanı tam oturtmak için birkaç sorum var: Seyyar kantar var mı? Klimayı usta mı söküyor?"
-          </div>
-        </div>
-
-        <!-- Adım 4 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-orange-400 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center text-[11px]">4</span>
-            <span>Köprü & 25.000 ₺ Teklifi</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            Notlar bitince arkana yaslan, 15 binin sadece site olduğunu belirt:
-          </p>
-          <div class="text-[11px] font-mono text-orange-200/90 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "15 bin temel yazılımdı. Ajanslar buna 80-100 bin istiyor. Lansmanla 25.000 ₺ anahtar teslim bağlayalım + 5.000 ₺ yönetim."
-          </div>
-        </div>
-
-        <!-- Adım 5 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-purple-400 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-300 flex items-center justify-center text-[11px]">5</span>
-            <span>Taksi vs Kendi Araban</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            "Reklam ne zaman biter, para azalır mı?" derse vurucu benzetme:
-          </p>
-          <div class="text-[11px] font-mono text-purple-200/90 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "Google Ads taksidir (hemen yarın müşteri). SEO arabadır (1-2 ayda bedava). 94 puanla tıklama masrafınız zamanla yarı yarıya düşecek."
-          </div>
-        </div>
-
-        <!-- Adım 6 -->
-        <div class="bg-slate-850 p-4 rounded-xl border border-slate-700/80 space-y-2">
-          <div class="flex items-center gap-2 text-emerald-300 text-xs font-black uppercase tracking-wider">
-            <span class="w-5 h-5 rounded-full bg-emerald-500/30 text-emerald-200 flex items-center justify-center text-[11px]">6</span>
-            <span>Kapanış & El Sıkışma</span>
-          </div>
-          <p class="text-xs text-slate-300 font-medium leading-relaxed">
-            Görsel sözünü al, kararı en alttaki karar kutusuna yaz ve elini uzat:
-          </p>
-          <div class="text-[11px] font-mono text-emerald-300 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 leading-snug">
-            "Siz bana WhatsApp'tan dükkan/araç fotoğraflarını atın, haftaya reklamı açıp telefonları çaldıralım. Hayırlı olsun diyelim mi?"
-          </div>
-        </div>
-
-      </div>
-    </section>
 
     <!-- BÖLÜM 1: FİYAT VE SEÇENEKLER VİTRİNİ -->
     <section>
@@ -585,6 +474,124 @@ import '../assets/styles/global.css';
             placeholder="Örn:&#10;• Seçilen Paket: Bölge Lideri (25.000 TL Anahtar Teslim)&#10;• Ödeme Planı: 15.000 TL peşin verildi, kalan 10.000 TL yayında verilecek&#10;• Google Ads Bütçesi: Günlük 300 TL kart bağlandı&#10;• Teslim Tarihi: Çarşamba günü tam yayın..."
             class="w-full text-xs font-mono p-4 rounded-xl bg-white border border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 leading-relaxed shadow-2xs"
           ></textarea>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🎯 SANA ÖZEL: TOPLANTI KONUŞMA SIRALAMASI & HATIRLATMA KARTLARI -->
+    <section class="bg-white text-slate-900 p-6 sm:p-7 rounded-2xl border-2 border-amber-500 shadow-md relative no-print">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-sm">
+            🎯
+          </span>
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+              <span>Toplantı Konuşma Rehberi & Hatırlatma Kartları</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300">
+                Sana Özel Hızlı Bakış
+              </span>
+            </h2>
+            <p class="text-xs text-slate-600 mt-0.5 font-medium">Toplantı boyunca takıldığın an göz ucuyla bakacağın altın konuşma adımları</p>
+          </div>
+        </div>
+
+        <button 
+          id="toggleGuideBtn" 
+          type="button"
+          onclick="toggleGuide()"
+          class="text-xs px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition-all cursor-pointer font-bold"
+        >
+          Gizle / Göster
+        </button>
+      </div>
+
+      <!-- 6 Adımlı Hatırlatma Grid -->
+      <div id="guideContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5 transition-all">
+        
+        <!-- Adım 1 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-amber-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[11px] font-black">1</span>
+            <span>Hal-Hatır & Çay (İlk 3-5 Dk)</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            Hemen işe ve paraya girme. Çay söyle, esnafla bağ kur:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-bold bg-amber-100/80 p-2.5 rounded-lg border-2 border-amber-300 leading-snug">
+            "Ali Bey işler nasıl? Sanayi tarafı hareketli mi bu aralar?"
+          </div>
+        </div>
+
+        <!-- Adım 2 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-emerald-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-[11px] font-black">2</span>
+            <span>Göz Doyurma & 94 vs 74 Kıyası</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            Laptopta siteyi aç, F12 mobil yap ve referans darbesini vur:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-bold bg-emerald-100/80 p-2.5 rounded-lg border-2 border-emerald-300 leading-snug">
+            "Sizin referans site 74 puan aldı (4 sn). Bizimki 94 puan (0.3 sn)! Hızlı site Google Ads'te %40 ucuza tıklar."
+          </div>
+        </div>
+
+        <!-- Adım 3 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-sky-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-sky-400 text-slate-950 flex items-center justify-center text-[11px] font-black">3</span>
+            <span>Aşağıdaki 5 Kutuyu Doldur</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            Sayfayı aşağı kaydır, soruları sorup klavyeyle takır takır not al:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-bold bg-sky-100/80 p-2.5 rounded-lg border-2 border-sky-300 leading-snug">
+            "Ali Bey dükkanı tam oturtmak için birkaç sorum var: Seyyar kantar var mı? Klimayı usta mı söküyor?"
+          </div>
+        </div>
+
+        <!-- Adım 4 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-orange-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-orange-400 text-slate-950 flex items-center justify-center text-[11px] font-black">4</span>
+            <span>Köprü & 25.000 ₺ Teklifi</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            Notlar bitince arkana yaslan, 15 binin sadece site olduğunu belirt:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-bold bg-orange-100/80 p-2.5 rounded-lg border-2 border-orange-300 leading-snug">
+            "15 bin temel yazılımdı. Ajanslar buna 80-100 bin istiyor. Lansmanla 25.000 ₺ anahtar teslim bağlayalım + 5.000 ₺ yönetim."
+          </div>
+        </div>
+
+        <!-- Adım 5 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-purple-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-purple-400 text-slate-950 flex items-center justify-center text-[11px] font-black">5</span>
+            <span>Taksi vs Kendi Araban</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            "Reklam ne zaman biter, para azalır mı?" derse vurucu benzetme:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-bold bg-purple-100/80 p-2.5 rounded-lg border-2 border-purple-300 leading-snug">
+            "Google Ads taksidir (hemen yarın müşteri). SEO arabadır (1-2 ayda bedava). 94 puanla tıklama masrafınız zamanla yarı yarıya düşecek."
+          </div>
+        </div>
+
+        <!-- Adım 6 -->
+        <div class="bg-white p-4 rounded-xl border-2 border-slate-200 space-y-2 shadow-xs">
+          <div class="flex items-center gap-2 text-emerald-950 text-xs font-black uppercase tracking-wider">
+            <span class="w-5 h-5 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-[11px] font-black">6</span>
+            <span>Kapanış & El Sıkışma</span>
+          </div>
+          <p class="text-xs text-slate-800 font-semibold leading-relaxed">
+            Görsel sözünü al, kararı en alttaki karar kutusuna yaz ve elini uzat:
+          </p>
+          <div class="text-[11px] font-mono text-slate-950 font-extrabold bg-emerald-100/80 p-2.5 rounded-lg border-2 border-emerald-400 leading-snug">
+            "Siz bana WhatsApp'tan dükkan/araç fotoğraflarını atın, haftaya reklamı açıp telefonları çaldıralım. Hayırlı olsun diyelim mi?"
+          </div>
         </div>
 
       </div>
